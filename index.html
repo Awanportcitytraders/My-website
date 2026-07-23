@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,18 +39,27 @@
     }
     </script>
 
-    <!-- Basic CSS Styles -->
+    <!-- Professional CSS Styles -->
     <style>
         :root {
-            --primary-color: #0d3b66;
-            --secondary-color: #f4d35e;
-            --text-color: #333333;
-            --bg-color: #f8f9fa;
+            --primary-color: #0b2545;
+            --primary-hover: #134074;
+            --secondary-color: #e0a96d;
+            --accent-color: #25d366;
+            --text-color: #1d2d44;
+            --text-muted: #4a5568;
+            --bg-color: #f4f6f9;
             --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
@@ -59,46 +67,160 @@
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
+        /* Top Navigation Header */
+        header.site-header {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
 
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav.nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav.nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Banner Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #134074 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 4px solid var(--secondary-color);
+        }
+
+        .hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            margin: 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Layout Grid System */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        @media (min-width: 850px) {
+            .container {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        /* Card System */
         .card {
             background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
 
         h2 {
             color: var(--primary-color);
             margin-top: 0;
+            font-size: 1.4rem;
             border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 8px;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
-        ul {
-            padding-left: 20px;
+        /* Services List */
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
         }
 
-        li {
-            margin-bottom: 8px;
+        .services-list li {
+            background: var(--bg-color);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
-        a {
-            color: var(--primary-color);
+        /* Contact Details & Buttons */
+        .contact-btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 15px;
+            border-radius: 6px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--primary-hover);
             text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .contact-btn.whatsapp {
+            background-color: var(--accent-color);
         }
 
-        .whatsapp-btn {
-            font-weight: bold;
+        .contact-btn.whatsapp:hover {
+            background-color: #20ba5a;
         }
 
         /* Form Styling */
@@ -108,112 +230,187 @@
         }
 
         label {
-            margin-top: 12px;
-            margin-bottom: 4px;
-            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
         input, select, textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
             font-size: 14px;
+            background-color: #fafbfc;
+            transition: border-color 0.2s ease;
         }
 
-        button {
-            margin-top: 20px;
-            padding: 12px;
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: #ffffff;
+        }
+
+        button.submit-btn {
+            margin-top: 25px;
+            padding: 14px;
             background-color: var(--primary-color);
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 16px;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 700;
+            transition: background 0.2s ease;
         }
 
-        button:hover {
-            background-color: #092a4a;
+        button.submit-btn:hover {
+            background-color: var(--primary-hover);
         }
 
+        /* Footer Styling */
         footer {
-            text-align: center;
-            padding: 20px;
             background-color: var(--primary-color);
-            color: white;
-            margin-top: 40px;
+            color: #ffffff;
+            padding: 30px 20px;
+            margin-top: 50px;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav.nav-links a {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="logo">A. AWAN <span>PORT CITY</span></a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="#inquiry">Inquiry</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>A. Awan Port City Traders (Pvt) Ltd</h1>
+        <p>Your Trusted Global Trade Partner Across Pakistan & the United Arab Emirates</p>
+    </section>
+
+    <!-- Main Container -->
     <div class="container">
 
-        <!-- About Section -->
-        <section id="about" class="card">
-            <h2>About Our Company</h2>
-            <p><strong>A. Awan Port City Traders (Pvt) Ltd</strong> is a registered trading company specializing in end-to-end import, export, and supply chain logistics. Operating out of Pakistan and the United Arab Emirates, we deliver trustworthy global trade execution.</p>
-        </section>
+        <!-- Main Column Content -->
+        <main class="main-content">
 
-        <!-- Services Section -->
-        <section id="services" class="card">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Customs Clearance & Port Handling</li>
-                <li>Import & Export Documentation</li>
-                <li>Freight Forwarding & Warehousing</li>
-                <li>Sourcing & Buyer Procurement Support</li>
-            </ul>
-        </section>
+            <!-- About Section -->
+            <section id="about" class="card">
+                <h2>About Our Company</h2>
+                <p><strong>A. Awan Port City Traders (Pvt) Ltd</strong> is a registered trading company specializing in end-to-end import, export, and supply chain logistics. Operating out of Pakistan and the United Arab Emirates, we deliver trustworthy global trade execution.</p>
+            </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="card contact-info">
-            <h2>Contact Information</h2>
-            <p><strong>Head Office Address:</strong><br>
-            K-646, Block F, Kauser Niazi Colony, North Nazimabad, Karachi, Pakistan</p>
-            
-            <p style="margin-top: 15px;"><strong>Official Email:</strong><br>
-            <a href="mailto:trade@awanportcitytraders.com">trade@awanportcitytraders.com</a></p>
-            
-            <p style="margin-top: 15px;"><strong>Direct Calls & WhatsApp:</strong><br>
-            🇦🇪 UAE: <a class="whatsapp-btn" href="https://wa.me/971526553541">+971 526553541</a><br>
-            🇵🇰 Pakistan: <a class="whatsapp-btn" href="https://wa.me/923412571675">+92 341 2571675</a><br>
-            🇵🇰 Pakistan: <a class="whatsapp-btn" href="https://wa.me/923112040915">+92 311 2040915</a></p>
-        </section>
+            <!-- Services Section -->
+            <section id="services" class="card">
+                <h2>Our Services</h2>
+                <ul class="services-list">
+                    <li>Customs Clearance & Port Handling</li>
+                    <li>Import & Export Documentation</li>
+                    <li>Freight Forwarding & Warehousing</li>
+                    <li>Sourcing & Buyer Procurement Support</li>
+                </ul>
+            </section>
 
-        <!-- Buyer Inquiry Form (Formspree Connected) -->
-        <section id="inquiry" class="card">
-            <h2>Send Buyer Inquiry</h2>
-            <form action="https://formspree.io/f/xwvgqgdr" method="POST">
+            <!-- Buyer Inquiry Form -->
+            <section id="inquiry" class="card">
+                <h2>Send Buyer Inquiry</h2>
+                <form action="https://formspree.io/f/xwvgqgdr" method="POST">
+                    
+                    <label for="name">Your Name / Company Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe or Company Ltd" required>
+
+                    <label for="email">Your Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="buyer@company.com" required>
+
+                    <label for="phone">Your Contact Number / WhatsApp</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
+
+                    <label for="service">Service Required</label>
+                    <select id="service" name="service">
+                        <option value="Import / Export">Import / Export</option>
+                        <option value="Customs Clearance">Customs Clearance</option>
+                        <option value="Freight & Logistics">Freight & Logistics</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                    </select>
+
+                    <label for="message">Inquiry Details</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Describe the product, volume, or services you require..." required></textarea>
+
+                    <button type="submit" class="submit-btn">Submit Business Inquiry</button>
+                </form>
+            </section>
+
+        </main>
+
+        <!-- Sidebar Content -->
+        <aside class="sidebar">
+
+            <!-- Contact Section Sidebar -->
+            <section id="contact" class="card contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Head Office Address:</strong><br>
+                K-646, Block F, Kauser Niazi Colony, North Nazimabad, Karachi, Pakistan</p>
                 
-                <label for="name">Your Name / Company Name</label>
-                <input type="text" id="name" name="name" placeholder="John Doe or Company Ltd" required>
+                <p style="margin-top: 15px;"><strong>Official Email:</strong><br>
+                <a href="mailto:trade@awanportcitytraders.com">trade@awanportcitytraders.com</a></p>
+                
+                <p style="margin-top: 15px;"><strong>Direct Calls & WhatsApp:</strong></p>
+                <div class="contact-btn-group">
+                    <a class="contact-btn whatsapp" href="https://wa.me/971526553541" target="_blank">🇦🇪 UAE: +971 526553541</a>
+                    <a class="contact-btn whatsapp" href="https://wa.me/923412571675" target="_blank">🇵🇰 PK: +92 341 2571675</a>
+                    <a class="contact-btn whatsapp" href="https://wa.me/923112040915" target="_blank">🇵🇰 PK: +92 311 2040915</a>
+                </div>
+            </section>
 
-                <label for="email">Your Email Address</label>
-                <input type="email" id="email" name="email" placeholder="buyer@company.com" required>
-
-                <label for="phone">Your Contact Number / WhatsApp</label>
-                <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
-
-                <label for="service">Service Required</label>
-                <select id="service" name="service">
-                    <option value="Import / Export">Import / Export</option>
-                    <option value="Customs Clearance">Customs Clearance</option>
-                    <option value="Freight & Logistics">Freight & Logistics</option>
-                    <option value="General Inquiry">General Inquiry</option>
-                </select>
-
-                <label for="message">Inquiry Details</label>
-                <textarea id="message" name="message" rows="5" placeholder="Describe the product, volume, or services you require..." required></textarea>
-
-                <button type="submit">Submit Business Inquiry</button>
-            </form>
-        </section>
+        </aside>
 
     </div>
 
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2026 A. Awan Port City Traders (Pvt) Ltd. All rights reserved.</p>
+        <div class="footer-content">
+            <p>&copy; 2026 A. Awan Port City Traders (Pvt) Ltd. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
