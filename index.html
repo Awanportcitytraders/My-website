@@ -87,7 +87,7 @@
 
         .logo {
             color: #ffffff;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
             text-decoration: none;
             letter-spacing: 0.5px;
@@ -110,27 +110,51 @@
             color: var(--secondary-color);
         }
 
-        /* Hero Banner Section */
+        /* Hero Banner with Uploaded Image Background */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #134074 100%);
-            color: #ffffff;
-            text-align: center;
-            padding: 50px 20px;
+            background-image: url('69ab515a345da.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-bottom: 4px solid var(--secondary-color);
         }
 
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 37, 69, 0.75); /* Dark blue overlay for high contrast readability */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+            text-align: center;
+            max-width: 800px;
+        }
+
         .hero h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.2rem;
+            margin: 0 0 12px 0;
+            font-size: 2rem;
             font-weight: 700;
         }
 
         .hero p {
             margin: 0;
             font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
+            opacity: 0.95;
         }
 
         /* Layout Grid System */
@@ -187,7 +211,7 @@
             font-size: 0.95rem;
         }
 
-        /* Contact Details & Buttons */
+        /* Contact Details & WhatsApp Buttons */
         .contact-btn-group {
             display: flex;
             flex-direction: column;
@@ -212,7 +236,6 @@
 
         .contact-btn:hover {
             background-color: var(--primary-hover);
-            text-decoration: none;
         }
 
         .contact-btn.whatsapp {
@@ -280,10 +303,6 @@
         .footer-content {
             max-width: 1100px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
             text-align: center;
         }
 
@@ -299,10 +318,13 @@
                 gap: 10px;
             }
             nav.nav-links a {
-                margin: 0 10px;
+                margin: 0 8px;
             }
             .hero h1 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
+            }
+            .hero {
+                min-height: 220px;
             }
         }
     </style>
@@ -322,16 +344,20 @@
         </div>
     </header>
 
-    <!-- Hero Banner -->
+    <!-- Top Banner with Container Image Background -->
     <section class="hero">
-        <h1>A. Awan Port City Traders (Pvt) Ltd</h1>
-        <p>Your Trusted Global Trade Partner Across Pakistan & the United Arab Emirates</p>
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>A. Awan Port City Traders (Pvt) Ltd</h1>
+                <p>Your Trusted Global Trade Partner Across Pakistan & the United Arab Emirates</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Main Container -->
+    <!-- Main Content Container -->
     <div class="container">
 
-        <!-- Main Column Content -->
+        <!-- Main Column -->
         <main class="main-content">
 
             <!-- About Section -->
@@ -382,10 +408,10 @@
 
         </main>
 
-        <!-- Sidebar Content -->
+        <!-- Sidebar Section -->
         <aside class="sidebar">
 
-            <!-- Contact Section Sidebar -->
+            <!-- Contact Section -->
             <section id="contact" class="card contact-info">
                 <h2>Contact Information</h2>
                 <p><strong>Head Office Address:</strong><br>
@@ -406,7 +432,7 @@
 
     </div>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 A. Awan Port City Traders (Pvt) Ltd. All rights reserved.</p>
