@@ -39,50 +39,60 @@
     }
     </script>
 
-    <!-- Professional CSS Styles -->
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
     <style>
         :root {
-            --primary-color: #0b2545;
-            --primary-hover: #134074;
-            --secondary-color: #e0a96d;
-            --accent-color: #25d366;
-            --text-color: #1d2d44;
-            --text-muted: #4a5568;
-            --bg-color: #f4f6f9;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
+            --primary-navy: #0B1B3D;
+            --secondary-blue: #142850;
+            --gold-accent: #D4AF37;
+            --gold-hover: #B89628;
+            --whatsapp-green: #25D366;
+            --whatsapp-hover: #20BA5A;
+            --text-dark: #222222;
+            --text-light: #F4F6F9;
+            --bg-light: #F8F9FA;
+            --border-color: #E2E8F0;
         }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: #EAEAEA;
             line-height: 1.6;
         }
 
-        /* Top Navigation Header */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* NAVIGATION HEADER */
         header.site-header {
-            background-color: var(--primary-color);
+            background-color: var(--primary-navy);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-bottom: 3px solid var(--gold-accent);
         }
 
         .header-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 15px 30px;
         }
 
         .logo {
@@ -91,132 +101,335 @@
             font-weight: 700;
             text-decoration: none;
             letter-spacing: 0.5px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .logo span {
-            color: var(--secondary-color);
+            color: var(--gold-accent);
         }
 
         nav.nav-links a {
             color: #ffffff;
             text-decoration: none;
             margin-left: 20px;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 600;
             transition: color 0.2s ease;
         }
 
         nav.nav-links a:hover {
-            color: var(--secondary-color);
+            color: var(--gold-accent);
         }
 
-        /* Hero Banner with Uploaded Image Background */
-        .hero {
-            background-image: url('69ab515a345da.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            min-height: 300px;
+        /* CONTAINER WRAPPER */
+        .page-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #FFFFFF;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+
+        /* PROFILE HEADER / HERO BANNER */
+        .profile-header {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            justify-content: center;
-            border-bottom: 4px solid var(--secondary-color);
+            justify-content: space-between;
+            padding: 40px;
+            background: #FFF;
         }
 
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(11, 37, 69, 0.75); /* Dark blue overlay for high contrast readability */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
+        .logo-container {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 20px;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            color: #ffffff;
-            text-align: center;
-            max-width: 800px;
+        .company-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-navy);
+            letter-spacing: 1px;
+            line-height: 1.1;
         }
 
-        .hero h1 {
-            margin: 0 0 12px 0;
-            font-size: 2rem;
+        .company-subtitle {
+            color: var(--gold-accent);
             font-weight: 700;
-        }
-
-        .hero p {
-            margin: 0;
             font-size: 1.1rem;
-            opacity: 0.95;
+            margin-top: 5px;
         }
 
-        /* Layout Grid System */
-        .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
+        .tagline {
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #666;
+            margin-top: 5px;
+            font-weight: 600;
         }
 
-        @media (min-width: 850px) {
-            .container {
-                grid-template-columns: 2fr 1fr;
-            }
+        .main-heading {
+            margin-top: 25px;
+            border-top: 2px solid var(--gold-accent);
+            padding-top: 15px;
         }
 
-        /* Card System */
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 25px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-top: 0;
-            font-size: 1.4rem;
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        /* Services List */
-        .services-list {
-            list-style: none;
+        .main-heading h2 {
+            font-size: 1.8rem;
+            color: var(--primary-navy);
+            text-transform: uppercase;
+            border: none;
             padding: 0;
             margin: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .main-heading p {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #555;
+            letter-spacing: 2px;
+        }
+
+        .header-hero-img {
+            flex: 1;
+            min-width: 300px;
+            height: 320px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header-hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* FEATURES BAR */
+        .features-bar {
+            display: flex;
+            justify-content: space-around;
+            background: var(--bg-light);
+            padding: 20px;
+            border-top: 1px solid #EEE;
+            border-bottom: 1px solid #EEE;
+            flex-wrap: wrap;
             gap: 15px;
         }
 
-        .services-list li {
-            background: var(--bg-color);
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid var(--primary-color);
+        .feature-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gold-accent);
+            color: #FFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            text-transform: uppercase;
+        }
+
+        /* GRID SYSTEM */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .card {
+            background: #FFF;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--gold-accent);
+            margin-bottom: 25px;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+        }
+
+        .card-title i {
+            font-size: 1.2rem;
+            color: var(--gold-accent);
+        }
+
+        .card-title h3, .card-title h2 {
+            font-size: 1.3rem;
+            margin: 0;
+            padding: 0;
+            border: none;
+            color: var(--primary-navy);
+        }
+
+        .card p, .card ul {
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        /* LIST STYLES */
+        .bullet-list, .services-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .bullet-list li, .services-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.9rem;
+        }
+
+        .bullet-list li::before, .services-list li::before {
+            content: "•";
+            color: var(--gold-accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* PRODUCTS GRID */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
             font-weight: 600;
+        }
+
+        .product-item i {
+            color: var(--gold-accent);
+        }
+
+        /* INQUIRY FORM */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 12px;
+            margin-bottom: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--primary-navy);
+        }
+
+        input, select, textarea {
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            background-color: #FAFBFB;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--gold-accent);
+            background-color: #FFFFFF;
+        }
+
+        button.submit-btn {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: var(--primary-navy);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            transition: background 0.2s ease;
+        }
+
+        button.submit-btn:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        /* DARK SECTION (ABOUT & CONTACT) */
+        .dark-section {
+            background: var(--primary-navy);
+            color: var(--text-light);
+            padding: 40px;
+        }
+
+        .dark-section h3 {
+            color: var(--gold-accent);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dark-section p {
+            color: #E0E6ED;
             font-size: 0.95rem;
         }
 
-        /* Contact Details & WhatsApp Buttons */
+        .contact-grid {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-block h4 {
+            color: var(--gold-accent);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-block p, .contact-block a {
+            color: #FFFFFF;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .contact-block a:hover {
+            text-decoration: underline;
+        }
+
+        /* BUTTON GROUPS */
         .contact-btn-group {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         .contact-btn {
@@ -224,219 +437,335 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 12px 15px;
+            padding: 10px 15px;
             border-radius: 6px;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
+            background-color: var(--secondary-blue);
+            color: white !important;
+            text-decoration: none !important;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.2s ease;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.2s ease;
         }
 
         .contact-btn:hover {
-            background-color: var(--primary-hover);
+            background-color: #1D3557;
         }
 
         .contact-btn.whatsapp {
-            background-color: var(--accent-color);
+            background-color: var(--whatsapp-green);
         }
 
         .contact-btn.whatsapp:hover {
-            background-color: #20ba5a;
+            background-color: var(--whatsapp-hover);
         }
 
-        /* Form Styling */
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-top: 15px;
-            margin-bottom: 6px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        input, select, textarea {
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 14px;
-            background-color: #fafbfc;
-            transition: border-color 0.2s ease;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            background-color: #ffffff;
-        }
-
-        button.submit-btn {
-            margin-top: 25px;
-            padding: 14px;
-            background-color: var(--primary-color);
+        /* FOOTER BANNER */
+        .quote-banner {
+            background: var(--secondary-blue);
             color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: background 0.2s ease;
+            padding: 30px 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-top: 3px solid var(--gold-accent);
         }
 
-        button.submit-btn:hover {
-            background-color: var(--primary-hover);
+        .quote-banner i {
+            font-size: 2.5rem;
+            color: var(--gold-accent);
         }
 
-        /* Footer Styling */
-        footer {
-            background-color: var(--primary-color);
-            color: #ffffff;
-            padding: 30px 20px;
-            margin-top: 50px;
-            border-top: 4px solid var(--secondary-color);
+        .quote-banner p {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #E0E6ED;
         }
 
-        .footer-content {
-            max-width: 1100px;
-            margin: 0 auto;
+        footer.site-footer {
+            background-color: #071228;
+            color: #FFFFFF;
+            padding: 15px;
             text-align: center;
+            font-size: 0.85rem;
+            opacity: 0.9;
         }
 
-        .footer-content p {
-            margin: 0;
-            font-size: 0.9rem;
-            opacity: 0.8;
+        /* RESPONSIVE MEDIA QUERIES */
+        @media (max-width: 850px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .profile-header {
+                padding: 20px;
+            }
+            .dark-section {
+                padding: 20px;
+            }
         }
 
         @media (max-width: 600px) {
             .header-container {
                 flex-direction: column;
-                gap: 10px;
+                gap: 12px;
+                padding: 15px;
             }
             nav.nav-links a {
-                margin: 0 8px;
+                margin: 0 6px;
             }
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-            .hero {
-                min-height: 220px;
+            .company-title {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Site Header -->
+    <!-- STICKY SITE HEADER -->
     <header class="site-header">
         <div class="header-container">
             <a href="#" class="logo">A. AWAN <span>PORT CITY</span></a>
             <nav class="nav-links">
                 <a href="#about">About</a>
+                <a href="#reach">Reach</a>
                 <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+                <a href="#products">Products</a>
                 <a href="#inquiry">Inquiry</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Top Banner with Container Image Background -->
-    <section class="hero">
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h1>A. Awan Port City Traders (Pvt) Ltd</h1>
-                <p>Your Trusted Global Trade Partner Across Pakistan & the United Arab Emirates</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content Container -->
-    <div class="container">
-
-        <!-- Main Column -->
-        <main class="main-content">
-
-            <!-- About Section -->
-            <section id="about" class="card">
-                <h2>About Our Company</h2>
-                <p><strong>A. Awan Port City Traders (Pvt) Ltd</strong> is a registered trading company specializing in end-to-end import, export, and supply chain logistics. Operating out of Pakistan and the United Arab Emirates, we deliver trustworthy global trade execution.</p>
-            </section>
-
-            <!-- Services Section -->
-            <section id="services" class="card">
-                <h2>Our Services</h2>
-                <ul class="services-list">
-                    <li>Customs Clearance & Port Handling</li>
-                    <li>Import & Export Documentation</li>
-                    <li>Freight Forwarding & Warehousing</li>
-                    <li>Sourcing & Buyer Procurement Support</li>
-                </ul>
-            </section>
-
-            <!-- Buyer Inquiry Form -->
-            <section id="inquiry" class="card">
-                <h2>Send Buyer Inquiry</h2>
-                <form action="https://formspree.io/f/xwvgqgdr" method="POST">
-                    
-                    <label for="name">Your Name / Company Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe or Company Ltd" required>
-
-                    <label for="email">Your Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="buyer@company.com" required>
-
-                    <label for="phone">Your Contact Number / WhatsApp</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
-
-                    <label for="service">Service Required</label>
-                    <select id="service" name="service">
-                        <option value="Import / Export">Import / Export</option>
-                        <option value="Customs Clearance">Customs Clearance</option>
-                        <option value="Freight & Logistics">Freight & Logistics</option>
-                        <option value="General Inquiry">General Inquiry</option>
-                    </select>
-
-                    <label for="message">Inquiry Details</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Describe the product, volume, or services you require..." required></textarea>
-
-                    <button type="submit" class="submit-btn">Submit Business Inquiry</button>
-                </form>
-            </section>
-
-        </main>
-
-        <!-- Sidebar Section -->
-        <aside class="sidebar">
-
-            <!-- Contact Section -->
-            <section id="contact" class="card contact-info">
-                <h2>Contact Information</h2>
-                <p><strong>Head Office Address:</strong><br>
-                K-646, Block F, Kauser Niazi Colony, North Nazimabad, Karachi, Pakistan</p>
+    <!-- MAIN PROFILE CONTAINER -->
+    <div class="page-container">
+        
+        <!-- HEADER / HERO -->
+        <header class="profile-header">
+            <div class="logo-container">
+                <h1 class="company-title">A. AWAN</h1>
+                <div class="company-subtitle">PORT CITY TRADERS (PRIVATE) LIMITED</div>
+                <div class="tagline">Connecting Markets, Creating Opportunities</div>
                 
-                <p style="margin-top: 15px;"><strong>Official Email:</strong><br>
-                <a href="mailto:trade@awanportcitytraders.com">trade@awanportcitytraders.com</a></p>
-                
-                <p style="margin-top: 15px;"><strong>Direct Calls & WhatsApp:</strong></p>
-                <div class="contact-btn-group">
-                    <a class="contact-btn whatsapp" href="https://wa.me/971526553541" target="_blank">🇦🇪 UAE: +971 526553541</a>
-                    <a class="contact-btn whatsapp" href="https://wa.me/923412571675" target="_blank">🇵🇰 PK: +92 341 2571675</a>
-                    <a class="contact-btn whatsapp" href="https://wa.me/923112040915" target="_blank">🇵🇰 PK: +92 311 2040915</a>
+                <div class="main-heading">
+                    <h2>Company Profile</h2>
+                    <p>IMPORT | EXPORT | GENERAL TRADING</p>
                 </div>
-            </section>
+            </div>
+            
+            <div class="header-hero-img">
+                <img src="69ab515a345da.jpg" alt="Shipping Containers and Cargo Logistics">
+            </div>
+        </header>
 
-        </aside>
+        <!-- FEATURES BAR -->
+        <section class="features-bar">
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
+                <p>Global Connections</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
+                <p>Reliable Partnerships</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <p>Quality Assurance</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <p>Growth Driven</p>
+            </div>
+        </section>
+
+        <!-- MAIN BODY GRID -->
+        <div class="grid-layout">
+            
+            <!-- LEFT COLUMN -->
+            <div class="column-left">
+                
+                <div id="reach" class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <h3>Global Reach</h3>
+                    </div>
+                    <p>We connect trusted suppliers with global buyers and markets across Asia, Middle East, Africa, Europe, North America, and beyond.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <h3>Our Mission</h3>
+                    </div>
+                    <p>To provide dependable international trading solutions by connecting global buyers with trusted suppliers and delivering quality products at competitive prices.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-eye"></i>
+                        <h3>Our Vision</h3>
+                    </div>
+                    <p>To become a recognized international trading company known for integrity, professionalism, and customer satisfaction.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-gem"></i>
+                        <h3>Our Values</h3>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Integrity & Transparency</li>
+                        <li>Quality & Excellence</li>
+                        <li>Customer Satisfaction</li>
+                        <li>Reliable Partnerships</li>
+                        <li>Innovation & Growth</li>
+                    </ul>
+                </div>
+
+                <div id="services" class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                        <h3>Our Core Services</h3>
+                    </div>
+                    <ul class="services-list">
+                        <li>Customs Clearance & Port Handling</li>
+                        <li>Import & Export Documentation</li>
+                        <li>Freight Forwarding & Warehousing</li>
+                        <li>Sourcing & Buyer Procurement Support</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="column-right">
+                
+                <div class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-check-double"></i>
+                        <h3>Why Choose Us</h3>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Registered Private Limited Company</li>
+                        <li>Wide Range of Quality Products</li>
+                        <li>Competitive Prices</li>
+                        <li>Strong & Reliable Supplier Network</li>
+                        <li>Timely Delivery & Efficient Service</li>
+                        <li>Customer-Focused Approach</li>
+                        <li>Commitment to Long-Term Partnerships</li>
+                    </ul>
+                </div>
+
+                <div id="products" class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                        <h3>Our Products</h3>
+                    </div>
+                    <p>We deal in a wide range of products based on customer requirements, including but not limited to:</p>
+                    
+                    <div class="products-grid">
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Agricultural Products</div>
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Food Commodities</div>
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Textiles & Garments</div>
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Leather Products</div>
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Sports Goods</div>
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Surgical Instruments</div>
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Construction Materials</div>
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Chemicals</div>
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Industrial Equipment</div>
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Electrical Products</div>
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Household Goods</div>
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Auto Parts</div>
+                        <div class="product-item"><i class="fa-solid fa-circle-check"></i> Packaging Materials</div>
+                    </div>
+                    <p style="margin-top: 10px; font-style: italic; color: #777;">...and many more</p>
+                </div>
+
+                <!-- INQUIRY FORM CARD -->
+                <div id="inquiry" class="card">
+                    <div class="card-title">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <h3>Send Buyer Inquiry</h3>
+                    </div>
+                    <form action="https://formspree.io/f/xwvgqgdr" method="POST">
+                        <label for="name">Your Name / Company Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe or Company Ltd" required>
+
+                        <label for="email">Your Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="buyer@company.com" required>
+
+                        <label for="phone">Your Contact Number / WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
+
+                        <label for="service">Service Required</label>
+                        <select id="service" name="service">
+                            <option value="Import / Export">Import / Export</option>
+                            <option value="Customs Clearance">Customs Clearance</option>
+                            <option value="Freight & Logistics">Freight & Logistics</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                        </select>
+
+                        <label for="message">Inquiry Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Describe the product, volume, or services you require..." required></textarea>
+
+                        <button type="submit" class="submit-btn">Submit Business Inquiry</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ABOUT & CONTACT (DARK SECTION) -->
+        <section class="dark-section">
+            <div id="about" style="margin-bottom: 30px;">
+                <h3><i class="fa-solid fa-circle-info"></i> About Our Company</h3>
+                <p>A. Awan Port City Traders (Private) Limited is a Pakistan and UAE-based import, export, and general trading company dedicated to delivering quality products, reliable services, and value-driven solutions to customers worldwide. We aim to build long-term business relationships through integrity, professionalism, and a strong commitment to customer satisfaction.</p>
+            </div>
+
+            <div id="contact">
+                <h3><i class="fa-solid fa-headset"></i> Contact Information</h3>
+                <div class="contact-grid">
+                    
+                    <div class="contact-block">
+                        <h4>Head Office Address</h4>
+                        <p>K-646, Block F, Kauser Niazi Colony,<br>North Nazimabad, Karachi, Pakistan</p>
+                    </div>
+
+                    <div class="contact-block">
+                        <h4>Official Email & Web</h4>
+                        <p><a href="mailto:trade@awanportcitytraders.com">trade@awanportcitytraders.com</a></p>
+                        <p style="margin-top: 5px;"><a href="https://www.awanportcitytraders.com/" target="_blank">www.awanportcitytraders.com</a></p>
+                    </div>
+
+                    <div class="contact-block">
+                        <h4>Direct Calls & WhatsApp</h4>
+                        <div class="contact-btn-group">
+                            <a class="contact-btn whatsapp" href="https://wa.me/971526553541" target="_blank"><i class="fa-brands fa-whatsapp"></i> 🇦🇪 UAE: +971 526 553 541</a>
+                            <a class="contact-btn whatsapp" href="https://wa.me/923412571675" target="_blank"><i class="fa-brands fa-whatsapp"></i> 🇵🇰 PK: +92 341 257 1675</a>
+                            <a class="contact-btn whatsapp" href="https://wa.me/923112040915" target="_blank"><i class="fa-brands fa-whatsapp"></i> 🇵🇰 PK: +92 311 204 0915</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER QUOTE BANNER -->
+        <footer class="quote-banner">
+            <i class="fa-solid fa-quote-left"></i>
+            <div>
+                <h4 style="color: var(--gold-accent); margin-bottom: 5px;">Our Business Philosophy</h4>
+                <p>We believe in building long-term relationships by delivering quality, value, and trust in every business we do. We look forward to building a successful and lasting partnership with your esteemed organization.</p>
+                <p style="color: var(--gold-accent); font-weight: 600; font-size: 0.85rem; margin-top: 5px; font-style: normal;">— A. Awan Port City Traders (Private) Limited</p>
+            </div>
+        </footer>
 
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 A. Awan Port City Traders (Pvt) Ltd. All rights reserved.</p>
-        </div>
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+        <p>&copy; 2026 A. Awan Port City Traders (Pvt) Ltd. All rights reserved.</p>
     </footer>
 
 </body>
