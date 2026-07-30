@@ -1,1089 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A. Awan Port City Traders (Pvt) Ltd | Import | Export | General Trading</title>
-    
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --navy-dark: #0a192f;
-            --navy-header: #081225;
-            --gold-primary: #d4af37;
-            --gold-hover: #b89628;
-            --bg-light: #f4f6f9;
-            --card-bg: #ffffff;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --whatsapp-green: #25d366;
-            --success-green: #10b981;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Open Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        html {
-            scroll-padding-top: 80px;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Top Bar Navigation */
-        header {
-            background-color: var(--navy-header);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 3px solid var(--gold-primary);
-        }
-
-        .navbar {
-            max-width: 1250px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .brand-logo {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .brand-title {
-            color: #ffffff;
-            font-size: 1.3rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-        }
-
-        .brand-title span {
-            color: var(--gold-primary);
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 1.8rem;
-            list-style: none;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--gold-primary);
-        }
-
-        .menu-toggle {
-            display: none;
-            color: var(--gold-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Banner */
-        .hero {
-            background: #ffffff;
-            padding: 3rem 2rem 2.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .hero-container {
-            max-width: 1250px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero-left h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--navy-dark);
-            line-height: 1.1;
-        }
-
-        .hero-left h2 {
-            font-size: 1.1rem;
-            color: var(--gold-primary);
-            font-weight: 700;
-            margin-top: 0.3rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .hero-tagline {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0.8rem 0 1.5rem 0;
-            position: relative;
-        }
-
-        .hero-tagline::after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: var(--gold-primary);
-            margin-top: 0.8rem;
-        }
-
-        .hero-profile-title {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--navy-dark);
-            text-transform: uppercase;
-        }
-
-        .hero-subtext {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.85rem 1.6rem;
-            border-radius: 6px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-primary {
-            background-color: var(--navy-dark);
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--gold-primary);
-            color: var(--navy-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-gold {
-            background-color: var(--gold-primary);
-            color: var(--navy-dark);
-        }
-
-        .btn-gold:hover {
-            background-color: var(--gold-hover);
-            color: #ffffff;
-            transform: translateY(-2px);
-        }
-
-        .hero-right img {
-            width: 100%;
-            height: 340px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        /* Feature Pillars Bar */
-        .features-bar {
-            background: #ffffff;
-            padding: 1.8rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .features-grid {
-            max-width: 1250px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            text-align: center;
-        }
-
-        .feature-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.6rem;
-            text-decoration: none;
-            transition: transform 0.3s;
-        }
-
-        .feature-item:hover {
-            transform: translateY(-3px);
-        }
-
-        .feature-icon {
-            width: 55px;
-            height: 55px;
-            background-color: var(--gold-primary);
-            color: #ffffff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            transition: background-color 0.3s;
-        }
-
-        .feature-item:hover .feature-icon {
-            background-color: var(--navy-dark);
-        }
-
-        .feature-title {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--navy-dark);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Main Content Grid */
-        .main-container {
-            max-width: 1250px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .info-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 1.8rem;
-            margin-bottom: 1.8rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 1rem;
-        }
-
-        .card-header i {
-            color: var(--gold-primary);
-            font-size: 1.3rem;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            color: var(--navy-dark);
-            font-weight: 700;
-        }
-
-        .card-list {
-            list-style: none;
-        }
-
-        .card-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.92rem;
-            color: var(--text-dark);
-        }
-
-        .card-list li::before {
-            content: "\f058";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--gold-primary);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.5rem 1rem;
-        }
-
-        /* Inquiry Form */
-        .inquiry-card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border: 1px solid var(--border-color);
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--navy-dark);
-            margin-bottom: 0.4rem;
-        }
-
-        .form-group input, 
-        .form-group select, 
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            background-color: #fafafa;
-            font-size: 0.9rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus, 
-        .form-group select:focus, 
-        .form-group textarea:focus {
-            border-color: var(--gold-primary);
-            background-color: #ffffff;
-        }
-
-        .btn-submit {
-            width: 100%;
-            background-color: var(--navy-dark);
-            color: #ffffff;
-            border: none;
-            padding: 0.9rem;
-            font-size: 0.95rem;
-            font-weight: 700;
-            border-radius: 6px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .btn-submit:hover {
-            background-color: var(--gold-primary);
-            color: var(--navy-dark);
-        }
-
-        .form-status {
-            display: none;
-            padding: 1rem;
-            margin-top: 1rem;
-            border-radius: 6px;
-            font-weight: 600;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        .form-status.success {
-            display: block;
-            background-color: #d1fae5;
-            color: #065f46;
-            border: 1px solid #a7f3d0;
-        }
-
-        .form-status.error {
-            display: block;
-            background-color: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #fca5a5;
-        }
-
-        /* PDF Viewer Section */
-        .pdf-section {
-            max-width: 1250px;
-            margin: 0 auto 3rem;
-            padding: 0 2rem;
-        }
-
-        .pdf-box {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            text-align: center;
-        }
-
-        .pdf-frame {
-            width: 100%;
-            height: 600px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            margin-top: 1.5rem;
-        }
-
-        /* Modal PDF Pop-up */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: #fff;
-            width: 90%;
-            max-width: 1050px;
-            height: 85vh;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .modal-header {
-            background: var(--navy-dark);
-            color: #fff;
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .close-modal {
-            color: var(--gold-primary);
-            font-size: 1.8rem;
-            cursor: pointer;
-            border: none;
-            background: none;
-            line-height: 1;
-        }
-
-        .modal-body {
-            flex: 1;
-        }
-
-        .modal-body iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: var(--whatsapp-green);
-            color: #ffffff;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            text-decoration: none;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #1eb956;
-        }
-
-        /* Philosophy Callout */
-        .philosophy-banner {
-            background: var(--navy-dark);
-            color: #ffffff;
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 4px solid var(--gold-primary);
-            border-bottom: 4px solid var(--gold-primary);
-            margin-bottom: 3rem;
-        }
-
-        .philosophy-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .philosophy-title {
-            color: var(--gold-primary);
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--navy-header);
-            color: #ffffff;
-            padding: 3rem 2rem 1.5rem;
-        }
-
-        .footer-grid {
-            max-width: 1250px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-item h4 {
-            color: var(--gold-primary);
-            margin-bottom: 1.2rem;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #cbd5e1;
-            text-decoration: none;
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .contact-link:hover {
-            color: var(--gold-primary);
-        }
-
-        .contact-link i {
-            color: var(--gold-primary);
-            width: 20px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 1.5rem;
-            color: #94a3b8;
-            font-size: 0.85rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero-container, .main-container {
-                grid-template-columns: 1fr;
-            }
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            .nav-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--navy-header);
-                flex-direction: column;
-                gap: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease-out;
-            }
-            .nav-menu.active {
-                max-height: 400px;
-            }
-            .nav-link {
-                padding: 1rem 2rem;
-                display: block;
-                border-bottom: 1px solid rgba(255,255,255,0.05);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f4f7f6;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Container Card */
+    .form-card {
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .form-card h2 {
+      margin-bottom: 8px;
+      font-size: 24px;
+      color: #111827;
+    }
+
+    .form-card p {
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    /* Form Layout */
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 15px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    /* Honeypot Field (Anti-Spam) */
+    .gotcha-field {
+      display: none !important;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      width: 100%;
+      background-color: #2563eb;
+      color: #ffffff;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #1d4ed8;
+    }
+
+    .submit-btn:disabled {
+      background-color: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    /* Notification Status Messages */
+    .status-msg {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      text-align: center;
+      display: none;
+    }
+
+    .status-msg.success {
+      display: block;
+      background-color: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .status-msg.error {
+      display: block;
+      background-color: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header>
-        <nav class="navbar">
-            <a href="#home" class="brand-logo">
-                <i class="fa-solid fa-ship" style="color: var(--gold-primary); font-size: 1.8rem;"></i>
-                <div class="brand-text">
-                    <span class="brand-title">A. AWAN <span>PORT CITY</span></span>
-                </div>
-            </a>
-            <div class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#reach" class="nav-link">Reach</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#products" class="nav-link">Products</a></li>
-                <li><a href="#inquiry" class="nav-link">Inquiry</a></li>
-                <li><a href="#pdf-section" class="nav-link">PDF Profile</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="form-card">
+    <h2>Get in Touch</h2>
+    <p>Fill out the form below to send a message directly to our inbox.</p>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-left">
-                <h1>A. AWAN</h1>
-                <h2>PORT CITY TRADERS (PRIVATE) LIMITED</h2>
-                <div class="hero-tagline">CONNECTING MARKETS, CREATING OPPORTUNITIES</div>
-                <div class="hero-profile-title">COMPANY PROFILE</div>
-                <div class="hero-subtext">IMPORT | EXPORT | GENERAL TRADING</div>
-                
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="openPdfModal()">
-                        <i class="fa-solid fa-file-pdf"></i> View Official Profile
-                    </button>
-                    <a href="Company - profile pdf.pdf" download class="btn btn-gold">
-                        <i class="fa-solid fa-download"></i> Download Profile
-                    </a>
-                </div>
-            </div>
-            <div class="hero-right">
-                <img src="69ab515a345da.jpg" alt="Port Vessel Logistics Container Ship">
-            </div>
-        </div>
-    </section>
+    <!-- Formspree HTML Form -->
+    <form id="my-form" action="https://formspree.io/f/xwvgqgdr" method="POST">
+      
+      <!-- Anti-Spam Honeypot Field -->
+      <input type="text" name="_gotcha" class="gotcha-field" tabindex="-1" autocomplete="off">
 
-    <!-- Interactive Pillars Bar -->
-    <section class="features-bar">
-        <div class="features-grid">
-            <a href="#reach" class="feature-item">
-                <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
-                <div class="feature-title">Global Connections</div>
-            </a>
-            <a href="#about" class="feature-item">
-                <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
-                <div class="feature-title">Reliable Partnerships</div>
-            </a>
-            <a href="#about" class="feature-item">
-                <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <div class="feature-title">Quality Assurance</div>
-            </a>
-            <a href="#services" class="feature-item">
-                <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
-                <div class="feature-title">Growth Driven</div>
-            </a>
-        </div>
-    </section>
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required>
+      </div>
 
-    <!-- Main Content Grid -->
-    <div class="main-container" id="about">
-        
-        <!-- Left Column -->
-        <div>
-            <!-- Global Reach -->
-            <div class="info-card" id="reach">
-                <div class="card-header">
-                    <i class="fa-solid fa-earth-americas"></i>
-                    <h3 class="card-title">Global Reach</h3>
-                </div>
-                <p>We connect trusted suppliers with global buyers and markets across Asia, Middle East, Africa, Europe, North America, and beyond.</p>
-            </div>
+      <!-- Sender Email Address (Maps Reply-To in Zoho) -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="_replyto" placeholder="john@example.com" required>
+      </div>
 
-            <!-- Mission -->
-            <div class="info-card">
-                <div class="card-header">
-                    <i class="fa-solid fa-bullseye"></i>
-                    <h3 class="card-title">Our Mission</h3>
-                </div>
-                <p>To provide dependable international trading solutions by connecting global buyers with trusted suppliers and delivering quality products at competitive prices.</p>
-            </div>
+      <!-- Subject Line -->
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="_subject" placeholder="Inquiry about services" required>
+      </div>
 
-            <!-- Vision -->
-            <div class="info-card">
-                <div class="card-header">
-                    <i class="fa-solid fa-eye"></i>
-                    <h3 class="card-title">Our Vision</h3>
-                </div>
-                <p>To become a recognized international trading company known for integrity, professionalism, and customer satisfaction.</p>
-            </div>
+      <!-- Message Body -->
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+      </div>
 
-            <!-- Core Values -->
-            <div class="info-card">
-                <div class="card-header">
-                    <i class="fa-solid fa-gem"></i>
-                    <h3 class="card-title">Our Values</h3>
-                </div>
-                <ul class="card-list">
-                    <li>Integrity & Transparency</li>
-                    <li>Quality & Excellence</li>
-                    <li>Customer Satisfaction</li>
-                    <li>Reliable Partnerships</li>
-                    <li>Innovation & Growth</li>
-                </ul>
-            </div>
+      <!-- Submit Button -->
+      <button type="submit" id="submit-btn" class="submit-btn">Send Message</button>
 
-            <!-- Core Services -->
-            <div class="info-card" id="services">
-                <div class="card-header">
-                    <i class="fa-solid fa-truck-ramp-box"></i>
-                    <h3 class="card-title">Our Core Services</h3>
-                </div>
-                <ul class="card-list">
-                    <li>Customs Clearance & Port Handling</li>
-                    <li>Import & Export Documentation</li>
-                    <li>Freight Forwarding & Warehousing</li>
-                    <li>Sourcing & Buyer Procurement Support</li>
-                </ul>
-            </div>
-        </div>
+      <!-- AJAX Feedback Container -->
+      <div id="status-message" class="status-msg"></div>
 
-        <!-- Right Column -->
-        <div>
-            <!-- Why Choose Us -->
-            <div class="info-card">
-                <div class="card-header">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <h3 class="card-title">Why Choose Us</h3>
-                </div>
-                <ul class="card-list">
-                    <li>Registered Private Limited Company</li>
-                    <li>Wide Range of Quality Products</li>
-                    <li>Competitive Prices</li>
-                    <li>Strong & Reliable Supplier Network</li>
-                    <li>Timely Delivery & Efficient Service</li>
-                    <li>Customer-Focused Approach</li>
-                    <li>Commitment to Long-Term Partnerships</li>
-                </ul>
-            </div>
+    </form>
+  </div>
 
-            <!-- Our Products -->
-            <div class="info-card" id="products">
-                <div class="card-header">
-                    <i class="fa-solid fa-boxes-packing"></i>
-                    <h3 class="card-title">Our Products</h3>
-                </div>
-                <p style="margin-bottom: 1rem;">We deal in a wide range of products based on customer requirements, including but not limited to:</p>
-                
-                <ul class="card-list products-grid">
-                    <li>Agricultural Products</li>
-                    <li>Food Commodities</li>
-                    <li>Textiles & Garments</li>
-                    <li>Leather Products</li>
-                    <li>Sports Goods</li>
-                    <li>Surgical Instruments</li>
-                    <li>Construction Materials</li>
-                    <li>Chemicals</li>
-                    <li>Industrial Equipment</li>
-                    <li>Electrical Products</li>
-                    <li>Household Goods</li>
-                    <li>Auto Parts</li>
-                    <li>Packaging Materials</li>
-                </ul>
-                <p style="font-style: italic; color: var(--gold-primary); margin-top: 0.8rem; font-weight: 600;">...and many more</p>
-            </div>
+  <!-- JavaScript to handle submission without leaving page -->
+  <script>
+    const form = document.getElementById("my-form");
+    const statusMsg = document.getElementById("status-message");
+    const submitBtn = document.getElementById("submit-btn");
 
-            <!-- Inquiry Form -->
-            <div class="inquiry-card" id="inquiry">
-                <div class="card-header">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    <h3 class="card-title">Send Buyer Inquiry</h3>
-                </div>
-                <form id="inquiryForm" action="https://formspree.io/trade@awanportcitytraders.com" method="POST">
-                    <div class="form-group">
-                        <label>Your Name / Company Name</label>
-                        <input type="text" name="name" placeholder="John Doe or Company Ltd" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Your Email Address</label>
-                        <input type="email" name="email" placeholder="buyer@company.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Your Contact Number / WhatsApp</label>
-                        <input type="text" name="phone" placeholder="+1 234 567 890" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Service / Product Required</label>
-                        <select name="service_required" required>
-                            <option value="">Select Category</option>
-                            <option value="Agricultural Products">Agricultural Products</option>
-                            <option value="Food Commodities">Food Commodities</option>
-                            <option value="Textiles & Garments">Textiles & Garments</option>
-                            <option value="Industrial Equipment">Industrial Equipment</option>
-                            <option value="Port Handling & Logistics">Port Handling & Logistics</option>
-                            <option value="Other Requirements">Other Requirements</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Message / Specifications</label>
-                        <textarea name="message" rows="4" placeholder="Detail your quantity, specifications, and destination port..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit" id="submitBtn">
-                        <i class="fa-solid fa-paper-plane"></i> Submit Inquiry
-                    </button>
-                    <div id="formStatus" class="form-status"></div>
-                </form>
-            </div>
-        </div>
+    async function handleSubmit(event) {
+      event.preventDefault();
+      
+      // Update button state while sending
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Sending...";
+      statusMsg.className = "status-msg";
+      statusMsg.style.display = "none";
 
-    </div>
-
-    <!-- Corporate Business Philosophy Banner -->
-    <section class="philosophy-banner">
-        <div class="philosophy-container">
-            <div class="philosophy-title"><i class="fa-solid fa-quote-left"></i> Our Business Philosophy</div>
-            <p style="font-size: 1.1rem; font-weight: 500;">"We believe in building long-term relationships by delivering quality, value, and trust in every business we do."</p>
-            <p style="margin-top: 1rem; color: var(--gold-primary); font-weight: 700;">BASED IN PAKISTAN, SERVING THE WORLD</p>
-        </div>
-    </section>
-
-    <!-- Interactive PDF Section -->
-    <section class="pdf-section" id="pdf-section">
-        <div class="pdf-box">
-            <h3 style="color: var(--navy-dark); font-size: 1.5rem; margin-bottom: 0.5rem;">Official Company Profile (PDF)</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">View or download our original signed corporate profile document.</p>
-            
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                <button class="btn btn-primary" onclick="openPdfModal()">
-                    <i class="fa-solid fa-expand"></i> Open Fullscreen View
-                </button>
-                <a href="Company - profile pdf.pdf" download class="btn btn-gold">
-                    <i class="fa-solid fa-file-arrow-down"></i> Download PDF Document
-                </a>
-            </div>
-
-            <iframe src="Company - profile pdf.pdf" class="pdf-frame" title="Company Profile Document"></iframe>
-        </div>
-    </section>
-
-    <!-- PDF Modal Window -->
-    <div class="modal" id="pdfModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>A. Awan Port City Traders - Company Profile</h3>
-                <button class="close-modal" onclick="closePdfModal()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <iframe src="Company - profile pdf.pdf"></iframe>
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating WhatsApp Action Button -->
-    <a href="https://wa.me/923112040915" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-grid">
-            <div class="footer-item">
-                <h4>A. AWAN PORT CITY TRADERS</h4>
-                <p style="color: #cbd5e1; font-size: 0.9rem;">Import, export, and general trading company dedicated to delivering quality products, reliable services, and value-driven solutions globally.</p>
-            </div>
-
-            <div class="footer-item">
-                <h4>Contact Details</h4>
-                <a href="mailto:trade@awanportcitytraders.com" class="contact-link">
-                    <i class="fa-solid fa-envelope"></i> trade@awanportcitytraders.com
-                </a>
-                <a href="tel:+971526553541" class="contact-link">
-                    <i class="fa-solid fa-phone"></i> +971 526 553 541
-                </a>
-                <a href="https://wa.me/923112040915" target="_blank" class="contact-link">
-                    <i class="fa-brands fa-whatsapp"></i> +92 311 204 0915 (WhatsApp)
-                </a>
-                <div class="contact-link">
-                    <i class="fa-solid fa-location-dot"></i> Karachi, Pakistan
-                </div>
-            </div>
-
-            <div class="footer-item">
-                <h4>Official Website</h4>
-                <a href="https://www.awanportcitytraders.com" target="_blank" class="contact-link">
-                    <i class="fa-solid fa-globe"></i> www.awanportcitytraders.com
-                </a>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 A. Awan Port City Traders (Private) Limited. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript Functionality -->
-    <script>
-        // Mobile Navigation Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+      const data = new FormData(event.target);
+      
+      try {
+        const response = await fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: {
+              'Accept': 'application/json'
+          }
         });
 
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Modal Functionality
-        const pdfModal = document.getElementById('pdfModal');
-
-        function openPdfModal() {
-            pdfModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+        if (response.ok) {
+          statusMsg.innerText = "Thank you! Your message has been sent to our Zoho Mail.";
+          statusMsg.classList.add("success");
+          form.reset();
+        } else {
+          const result = await response.json();
+          if (Object.hasOwn(result, 'errors')) {
+            statusMsg.innerText = result["errors"].map(error => error["message"]).join(", ");
+          } else {
+            statusMsg.innerText = "Oops! There was a problem submitting your form.";
+          }
+          statusMsg.classList.add("error");
         }
+      } catch (error) {
+        statusMsg.innerText = "Oops! Network error. Please try again later.";
+        statusMsg.classList.add("error");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Send Message";
+      }
+    }
 
-        function closePdfModal() {
-            pdfModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+    form.addEventListener("submit", handleSubmit);
+  </script>
 
-        // Close modal when clicking outside content box
-        window.addEventListener('click', (event) => {
-            if (event.target === pdfModal) {
-                closePdfModal();
-            }
-        });
-
-        // Handle Escape key to close modal
-        window.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && pdfModal.style.display === 'flex') {
-                closePdfModal();
-            }
-        });
-
-        // Active Navigation Highlight on Scroll
-        const sections = document.querySelectorAll('section, div[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Form Submission via AJAX (Formspree Integration)
-        const inquiryForm = document.getElementById('inquiryForm');
-        const formStatus = document.getElementById('formStatus');
-        const submitBtn = document.getElementById('submitBtn');
-
-        inquiryForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // UI Feedback during submission
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
-            formStatus.className = 'form-status';
-            formStatus.style.display = 'none';
-
-            const formData = new FormData(inquiryForm);
-
-            try {
-                const response = await fetch(inquiryForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    formStatus.textContent = 'Thank you! Your inquiry has been sent successfully.';
-                    formStatus.className = 'form-status success';
-                    inquiryForm.reset();
-                } else {
-                    const data = await response.json();
-                    if (Object.hasOwn(data, 'errors')) {
-                        formStatus.textContent = data.errors.map(error => error["message"]).join(", ");
-                    } else {
-                        formStatus.textContent = 'Oops! There was a problem submitting your form.';
-                    }
-                    formStatus.className = 'form-status error';
-                }
-            } catch (error) {
-                formStatus.textContent = 'Network error. Please try again or contact us via WhatsApp.';
-                formStatus.className = 'form-status error';
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Submit Inquiry';
-            }
-        });
-    </script>
 </body>
 </html>
