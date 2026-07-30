@@ -41,7 +41,7 @@
       padding: 0 24px;
     }
 
-    /* Top Bar Contact Info */
+    /* Top Contact Bar */
     .top-bar {
       background-color: var(--primary-navy);
       color: #ffffff;
@@ -58,8 +58,15 @@
       gap: 10px;
     }
 
-    .top-bar-info span {
-      margin-right: 20px;
+    .top-bar-info a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-right: 15px;
+      transition: color 0.2s;
+    }
+
+    .top-bar-info a:hover {
+      color: var(--accent-gold);
     }
 
     /* Navigation */
@@ -136,29 +143,29 @@
       background: linear-gradient(rgba(11, 31, 58, 0.85), rgba(11, 31, 58, 0.85)), 
                   url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: #ffffff;
-      padding: 100px 0 120px 0;
+      padding: 90px 0 70px 0;
       text-align: center;
     }
 
     .hero h2 {
-      font-size: 42px;
+      font-size: 38px;
       font-weight: 800;
       margin-bottom: 16px;
       color: #ffffff;
     }
 
     .hero p.tagline {
-      font-size: 20px;
+      font-size: 18px;
       color: var(--accent-gold);
       font-weight: 600;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       letter-spacing: 0.5px;
     }
 
     .hero p.subtext {
-      font-size: 16px;
+      font-size: 15px;
       max-width: 700px;
-      margin: 0 auto 36px auto;
+      margin: 0 auto 30px auto;
       color: #cbd5e1;
     }
 
@@ -166,11 +173,11 @@
       display: inline-block;
       background-color: var(--accent-gold);
       color: var(--primary-navy);
-      padding: 14px 32px;
+      padding: 12px 28px;
       border-radius: 4px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15px;
       transition: all 0.2s ease;
       text-transform: uppercase;
     }
@@ -180,14 +187,60 @@
       color: #ffffff;
     }
 
+    /* Sliding Product Bar Section (Upper Section) */
+    .slider-section {
+      background-color: var(--primary-navy);
+      padding: 24px 0;
+      overflow: hidden;
+      border-bottom: 3px solid var(--accent-gold);
+    }
+
+    .slider-title {
+      text-align: center;
+      color: var(--accent-gold);
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .slider-track {
+      display: flex;
+      width: calc(250px * 14);
+      animation: scroll 30s linear infinite;
+    }
+
+    .slider-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-250px * 7)); }
+    }
+
+    .slide-item {
+      width: 230px;
+      margin: 0 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(212, 160, 23, 0.3);
+      padding: 12px 16px;
+      border-radius: 6px;
+      color: #ffffff;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
     /* Pillars Strip */
     .pillars-strip {
       background: var(--secondary-navy);
       color: #ffffff;
-      padding: 30px 0;
-      margin-top: -40px;
-      border-bottom: 3px solid var(--accent-gold);
-      border-radius: 8px 8px 0 0;
+      padding: 24px 0;
+      border-radius: 0 0 8px 8px;
+      margin-bottom: 40px;
     }
 
     .pillars-grid {
@@ -199,7 +252,7 @@
 
     .pillar-item h4 {
       color: var(--accent-gold);
-      font-size: 16px;
+      font-size: 15px;
       margin-bottom: 4px;
     }
 
@@ -227,7 +280,7 @@
 
     /* About & Overview */
     .about-section {
-      padding: 80px 0;
+      padding: 60px 0;
     }
 
     .about-grid {
@@ -252,7 +305,7 @@
 
     /* Products Section */
     .products-section {
-      padding: 80px 0;
+      padding: 60px 0;
       background-color: #ffffff;
     }
 
@@ -283,9 +336,9 @@
       color: var(--primary-navy);
     }
 
-    /* Why Choose Us & Philosophy */
+    /* Values Section */
     .values-section {
-      padding: 80px 0;
+      padding: 60px 0;
     }
 
     .values-grid {
@@ -340,26 +393,59 @@
     .contact-details {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
     }
 
     .contact-item strong {
       display: block;
       color: var(--accent-gold);
-      font-size: 14px;
+      font-size: 13px;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
     }
 
-    .contact-item span {
-      font-size: 16px;
+    .contact-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 4px;
     }
 
-    /* Form Box Styling */
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .action-btn.call {
+      background-color: var(--accent-gold);
+      color: var(--primary-navy);
+    }
+
+    .action-btn.whatsapp {
+      background-color: #25D366;
+      color: #ffffff;
+    }
+
+    .action-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Form Side & Thank You Card */
     .contact-form-side {
       background: #ffffff;
       padding: 36px;
       border-radius: 8px;
       color: var(--text-main);
+      position: relative;
     }
 
     .form-group {
@@ -417,27 +503,50 @@
       cursor: not-allowed;
     }
 
-    .status-msg {
-      margin-top: 16px;
-      padding: 12px;
-      border-radius: 4px;
-      font-size: 14px;
-      text-align: center;
+    /* Hidden Thank You View */
+    .thank-you-card {
       display: none;
+      text-align: center;
+      padding: 40px 20px;
     }
 
-    .status-msg.success {
+    .thank-you-card.active {
       display: block;
+    }
+
+    .thank-you-card .check-icon {
+      width: 60px;
+      height: 60px;
       background-color: #d1fae5;
-      color: #065f46;
-      border: 1px solid #a7f3d0;
+      color: #059669;
+      font-size: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px auto;
     }
 
-    .status-msg.error {
-      display: block;
-      background-color: #fee2e2;
-      color: #991b1b;
-      border: 1px solid #fca5a5;
+    .thank-you-card h3 {
+      font-size: 24px;
+      color: var(--primary-navy);
+      margin-bottom: 12px;
+    }
+
+    .thank-you-card p {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    .reset-btn {
+      background-color: var(--accent-gold);
+      color: var(--primary-navy);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-weight: 700;
+      cursor: pointer;
     }
 
     /* Footer */
@@ -453,27 +562,28 @@
     @media (max-width: 768px) {
       .top-bar { display: none; }
       .about-grid, .values-grid, .contact-wrapper { grid-template-columns: 1fr; }
-      .hero h2 { font-size: 30px; }
+      .hero h2 { font-size: 28px; }
       .nav-links { gap: 14px; font-size: 13px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Contact Bar -->
+  <!-- Top Contact Bar with Call/WhatsApp Links -->
   <div class="top-bar">
     <div class="container top-bar-content">
       <div class="top-bar-info">
         <span>📍 Karachi, Pakistan</span>
-        <span>✉ trade@awanportcitytraders.com</span>
+        <a href="mailto:trade@awanportcitytraders.com">✉ trade@awanportcitytraders.com</a>
       </div>
-      <div>
-        <span>📞 +971 526 553 541 | +92 311 204 0915</span>
+      <div class="top-bar-info">
+        <a href="https://wa.me/971526553541" target="_blank">💬 UAE: +971 526 553 541</a>
+        <a href="https://wa.me/923112040915" target="_blank">💬 PK: +92 311 204 0915</a>
       </div>
     </div>
   </div>
 
-  <!-- Main Navigation -->
+  <!-- Header Navigation -->
   <header>
     <div class="container">
       <nav>
@@ -500,7 +610,29 @@
       <h2>A. AWAN PORT CITY TRADERS (PVT) LTD</h2>
       <p class="tagline">CONNECTING MARKETS, CREATING OPPORTUNITIES</p>
       <p class="subtext">Based in Pakistan, serving the world with dependable international trading solutions across Asia, Middle East, Africa, Europe, North America, and beyond.</p>
-      <a href="#contact" class="cta-btn">Send Inquiry</a>
+      <a href="#contact" class="cta-btn">Send Trade Inquiry</a>
+    </div>
+  </section>
+
+  <!-- Upper Product Sliding Bar (Carousel) -->
+  <section class="slider-section">
+    <div class="slider-title">Global Trade Categories Portfolio</div>
+    <div class="slider-track">
+      <div class="slide-item">Agricultural Products</div>
+      <div class="slide-item">Food Commodities</div>
+      <div class="slide-item">Textiles & Garments</div>
+      <div class="slide-item">Leather Goods</div>
+      <div class="slide-item">Sports Goods</div>
+      <div class="slide-item">Surgical Instruments</div>
+      <div class="slide-item">Construction Materials</div>
+      <!-- Duplicate Set for Continuous Infinite Loop -->
+      <div class="slide-item">Agricultural Products</div>
+      <div class="slide-item">Food Commodities</div>
+      <div class="slide-item">Textiles & Garments</div>
+      <div class="slide-item">Leather Goods</div>
+      <div class="slide-item">Sports Goods</div>
+      <div class="slide-item">Surgical Instruments</div>
+      <div class="slide-item">Construction Materials</div>
     </div>
   </section>
 
@@ -510,25 +642,25 @@
       <div class="pillars-grid">
         <div class="pillar-item">
           <h4>GLOBAL CONNECTIONS</h4>
-          <p>Worldwide Trading Network</p>
+          <p>Worldwide Network</p>
         </div>
         <div class="pillar-item">
           <h4>RELIABLE PARTNERSHIPS</h4>
-          <p>Built on Integrity & Trust</p>
+          <p>Built on Trust</p>
         </div>
         <div class="pillar-item">
           <h4>QUALITY ASSURANCE</h4>
-          <p>Strict Product Standards</p>
+          <p>Strict Standards</p>
         </div>
         <div class="pillar-item">
           <h4>GROWTH DRIVEN</h4>
-          <p>Expanding Market Reach</p>
+          <p>Expanding Reach</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- About & Mission Section -->
+  <!-- About Section -->
   <section id="about" class="about-section">
     <div class="container">
       <div class="section-header">
@@ -552,7 +684,7 @@
     </div>
   </section>
 
-  <!-- Products Portfolio -->
+  <!-- Products Portfolio Grid -->
   <section id="products" class="products-section">
     <div class="container">
       <div class="section-header">
@@ -577,7 +709,7 @@
     </div>
   </section>
 
-  <!-- Why Choose Us & Values -->
+  <!-- Values & Why Choose Us -->
   <section id="values" class="values-section">
     <div class="container">
       <div class="values-grid">
@@ -607,41 +739,55 @@
     </div>
   </section>
 
-  <!-- Contact Form Section (Formspree + Zoho Integration) -->
+  <!-- Contact & Form Section -->
   <section id="contact" class="contact-section">
     <div class="container">
       <div class="contact-wrapper">
         
-        <!-- Left Side Details -->
+        <!-- Left Side: Phone / WhatsApp Direct Action Buttons -->
         <div class="contact-info-side">
           <h2>Contact Us</h2>
-          <p>We look forward to building a successful and lasting partnership with your organization.</p>
+          <p>Get in touch directly via Phone, WhatsApp, or send us a trade inquiry.</p>
           
           <div class="contact-details">
+            <!-- UAE Number -->
+            <div class="contact-item">
+              <strong>UAE Contact Line</strong>
+              <span>+971 526 553 541</span>
+              <div class="contact-actions">
+                <a href="tel:+971526553541" class="action-btn call">📞 Call UAE</a>
+                <a href="https://wa.me/971526553541" target="_blank" class="action-btn whatsapp">💬 WhatsApp</a>
+              </div>
+            </div>
+
+            <!-- PK Number -->
+            <div class="contact-item">
+              <strong>Pakistan Office Line</strong>
+              <span>+92 311 204 0915</span>
+              <div class="contact-actions">
+                <a href="tel:+923112040915" class="action-btn call">📞 Call PK</a>
+                <a href="https://wa.me/923112040915" target="_blank" class="action-btn whatsapp">💬 WhatsApp</a>
+              </div>
+            </div>
+
             <div class="contact-item">
               <strong>Official Email</strong>
-              <span>trade@awanportcitytraders.com</span>
+              <span><a href="mailto:trade@awanportcitytraders.com" style="color:#ffffff;">trade@awanportcitytraders.com</a></span>
             </div>
-            <div class="contact-item">
-              <strong>Phone Numbers</strong>
-              <span>+971 526 553 541 (UAE)<br>+92 311 204 0915 (PK)</span>
-            </div>
+
             <div class="contact-item">
               <strong>Head Office Location</strong>
               <span>Karachi, Pakistan</span>
             </div>
-            <div class="contact-item">
-              <strong>Official Website</strong>
-              <span>www.awanportcitytraders.com</span>
-            </div>
           </div>
         </div>
 
-        <!-- Right Side Formspree AJAX Form -->
+        <!-- Right Side: Form / Thank You Card -->
         <div class="contact-form-side">
+          
+          <!-- Inquiry Form -->
           <form id="trade-inquiry-form" action="https://formspree.io/f/xwvgqgdr" method="POST">
             
-            <!-- Honeypot Field for Spam Protection -->
             <input type="text" name="_gotcha" class="gotcha-field" tabindex="-1" autocomplete="off">
 
             <div class="form-group">
@@ -656,7 +802,7 @@
 
             <div class="form-group">
               <label for="phone">Phone / WhatsApp Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="+92 ... / +971 ...">
+              <input type="tel" id="phone" name="phone" placeholder="+971 / +92 ..." required>
             </div>
 
             <div class="form-group">
@@ -670,9 +816,16 @@
             </div>
 
             <button type="submit" id="submit-btn" class="submit-btn">Submit Trade Inquiry</button>
-            <div id="status-message" class="status-msg"></div>
-
           </form>
+
+          <!-- Thank You View Container -->
+          <div id="thank-you-view" class="thank-you-card">
+            <div class="check-icon">✓</div>
+            <h3>Thank You!</h3>
+            <p>Your trade inquiry has been successfully sent to our team at <strong>trade@awanportcitytraders.com</strong> via Zoho Mail. We will review your message and reply within 24 hours.</p>
+            <button class="reset-btn" onclick="resetFormView()">Send Another Message</button>
+          </div>
+
         </div>
 
       </div>
@@ -686,10 +839,10 @@
     </div>
   </footer>
 
-  <!-- Submission Script (JS + AJAX) -->
+  <!-- JavaScript Script -->
   <script>
     const form = document.getElementById("trade-inquiry-form");
-    const statusMsg = document.getElementById("status-message");
+    const thankYouView = document.getElementById("thank-you-view");
     const submitBtn = document.getElementById("submit-btn");
 
     async function handleSubmit(event) {
@@ -697,8 +850,6 @@
       
       submitBtn.disabled = true;
       submitBtn.innerText = "Processing Inquiry...";
-      statusMsg.className = "status-msg";
-      statusMsg.style.display = "none";
 
       const data = new FormData(event.target);
       
@@ -712,25 +863,24 @@
         });
 
         if (response.ok) {
-          statusMsg.innerText = "Thank you! Your inquiry has been sent to our Zoho Mail. We will contact you shortly.";
-          statusMsg.classList.add("success");
+          // Switch to custom Thank You view
+          form.style.display = "none";
+          thankYouView.classList.add("active");
           form.reset();
         } else {
-          const result = await response.json();
-          if (Object.hasOwn(result, 'errors')) {
-            statusMsg.innerText = result["errors"].map(error => error["message"]).join(", ");
-          } else {
-            statusMsg.innerText = "There was an issue sending your inquiry. Please try again.";
-          }
-          statusMsg.classList.add("error");
+          alert("Submission issue. Please verify all fields or contact us directly on WhatsApp.");
         }
       } catch (error) {
-        statusMsg.innerText = "Connection error. Please check your network and try again.";
-        statusMsg.classList.add("error");
+        alert("Network error. Please check your connection and try again.");
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerText = "Submit Trade Inquiry";
       }
+    }
+
+    function resetFormView() {
+      thankYouView.classList.remove("active");
+      form.style.display = "block";
     }
 
     form.addEventListener("submit", handleSubmit);
