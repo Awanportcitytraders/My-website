@@ -3,49 +3,365 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <title>A. Awan Port City Traders (Private) Limited | Import & Export</title>
   <style>
-    /* Reset & Base Styles */
+    :root {
+      --primary-navy: #0b1f3a;
+      --secondary-navy: #152d4a;
+      --accent-gold: #d4a017;
+      --gold-hover: #b8860b;
+      --bg-light: #f4f7f9;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #cbd5e1;
+      --max-width: 1200px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #f4f7f6;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
     }
 
-    /* Container Card */
-    .form-card {
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Bar Contact Info */
+    .top-bar {
+      background-color: var(--primary-navy);
+      color: #ffffff;
+      padding: 8px 0;
+      font-size: 13px;
+      border-bottom: 2px solid var(--accent-gold);
+    }
+
+    .top-bar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .top-bar-info span {
+      margin-right: 20px;
+    }
+
+    /* Navigation */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-badge {
+      background-color: var(--primary-navy);
+      color: var(--accent-gold);
+      font-size: 24px;
+      font-weight: bold;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      border: 2px solid var(--accent-gold);
+    }
+
+    .logo-text h1 {
+      font-size: 18px;
+      color: var(--primary-navy);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .logo-text span {
+      font-size: 11px;
+      color: var(--accent-gold);
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary-navy);
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(11, 31, 58, 0.85), rgba(11, 31, 58, 0.85)), 
+                  url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #ffffff;
+      padding: 100px 0 120px 0;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+
+    .hero p.tagline {
+      font-size: 20px;
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero p.subtext {
+      font-size: 16px;
+      max-width: 700px;
+      margin: 0 auto 36px auto;
+      color: #cbd5e1;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background-color: var(--accent-gold);
+      color: var(--primary-navy);
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+    }
+
+    .cta-btn:hover {
+      background-color: var(--gold-hover);
+      color: #ffffff;
+    }
+
+    /* Pillars Strip */
+    .pillars-strip {
+      background: var(--secondary-navy);
+      color: #ffffff;
+      padding: 30px 0;
+      margin-top: -40px;
+      border-bottom: 3px solid var(--accent-gold);
+      border-radius: 8px 8px 0 0;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .pillar-item h4 {
+      color: var(--accent-gold);
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .pillar-item p {
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-header h2 {
+      font-size: 32px;
+      color: var(--primary-navy);
+      margin-bottom: 8px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+
+    /* About & Overview */
+    .about-section {
+      padding: 80px 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .about-box {
       background: #ffffff;
       padding: 32px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      width: 100%;
-      max-width: 500px;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent-gold);
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
     }
 
-    .form-card h2 {
-      margin-bottom: 8px;
-      font-size: 24px;
-      color: #111827;
+    .about-box h3 {
+      font-size: 22px;
+      color: var(--primary-navy);
+      margin-bottom: 12px;
     }
 
-    .form-card p {
-      margin-bottom: 24px;
+    /* Products Section */
+    .products-section {
+      padding: 80px 0;
+      background-color: #ffffff;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: var(--bg-light);
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .product-card span.icon {
+      color: var(--accent-gold);
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .product-card h4 {
+      font-size: 15px;
+      color: var(--primary-navy);
+    }
+
+    /* Why Choose Us & Philosophy */
+    .values-section {
+      padding: 80px 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .values-list {
+      list-style: none;
+    }
+
+    .values-list li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 24px;
+      font-size: 15px;
+    }
+
+    .values-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+      font-weight: bold;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 80px 0;
+      background-color: var(--primary-navy);
+      color: #ffffff;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .contact-info-side h2 {
+      font-size: 32px;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .contact-info-side p {
+      color: #cbd5e1;
+      margin-bottom: 32px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--accent-gold);
       font-size: 14px;
-      color: #6b7280;
+      text-transform: uppercase;
     }
 
-    /* Form Layout */
+    .contact-item span {
+      font-size: 16px;
+    }
+
+    /* Form Box Styling */
+    .contact-form-side {
+      background: #ffffff;
+      padding: 36px;
+      border-radius: 8px;
+      color: var(--text-main);
+    }
+
     .form-group {
       margin-bottom: 18px;
     }
@@ -55,60 +371,56 @@
       margin-bottom: 6px;
       font-weight: 600;
       font-size: 14px;
-      color: #374151;
+      color: var(--primary-navy);
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #d1d5db;
-      border-radius: 6px;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
       font-size: 15px;
-      transition: border-color 0.2s, box-shadow 0.2s;
       font-family: inherit;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      border-color: var(--primary-navy);
+      box-shadow: 0 0 0 3px rgba(11, 31, 58, 0.15);
     }
 
-    /* Honeypot Field (Anti-Spam) */
     .gotcha-field {
       display: none !important;
     }
 
-    /* Submit Button */
     .submit-btn {
       width: 100%;
-      background-color: #2563eb;
+      background-color: var(--primary-navy);
       color: #ffffff;
       padding: 14px;
       border: none;
-      border-radius: 6px;
+      border-radius: 4px;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.2s;
     }
 
     .submit-btn:hover {
-      background-color: #1d4ed8;
+      background-color: var(--secondary-navy);
     }
 
     .submit-btn:disabled {
-      background-color: #9ca3af;
+      background-color: #94a3b8;
       cursor: not-allowed;
     }
 
-    /* Notification Status Messages */
     .status-msg {
       margin-top: 16px;
       padding: 12px;
-      border-radius: 6px;
+      border-radius: 4px;
       font-size: 14px;
       text-align: center;
       display: none;
@@ -127,65 +439,264 @@
       color: #991b1b;
       border: 1px solid #fca5a5;
     }
+
+    /* Footer */
+    footer {
+      background-color: #061121;
+      color: #94a3b8;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .about-grid, .values-grid, .contact-wrapper { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 30px; }
+      .nav-links { gap: 14px; font-size: 13px; }
+    }
   </style>
 </head>
 <body>
 
-  <div class="form-card">
-    <h2>Get in Touch</h2>
-    <p>Fill out the form below to send a message directly to our inbox.</p>
-
-    <!-- Formspree HTML Form -->
-    <form id="my-form" action="https://formspree.io/f/xwvgqgdr" method="POST">
-      
-      <!-- Anti-Spam Honeypot Field -->
-      <input type="text" name="_gotcha" class="gotcha-field" tabindex="-1" autocomplete="off">
-
-      <!-- Full Name -->
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="John Doe" required>
+  <!-- Top Contact Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-info">
+        <span>📍 Karachi, Pakistan</span>
+        <span>✉ trade@awanportcitytraders.com</span>
       </div>
-
-      <!-- Sender Email Address (Maps Reply-To in Zoho) -->
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="_replyto" placeholder="john@example.com" required>
+      <div>
+        <span>📞 +971 526 553 541 | +92 311 204 0915</span>
       </div>
-
-      <!-- Subject Line -->
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="_subject" placeholder="Inquiry about services" required>
-      </div>
-
-      <!-- Message Body -->
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-      </div>
-
-      <!-- Submit Button -->
-      <button type="submit" id="submit-btn" class="submit-btn">Send Message</button>
-
-      <!-- AJAX Feedback Container -->
-      <div id="status-message" class="status-msg"></div>
-
-    </form>
+    </div>
   </div>
 
-  <!-- JavaScript to handle submission without leaving page -->
+  <!-- Main Navigation -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo-container">
+          <div class="logo-badge">A</div>
+          <div class="logo-text">
+            <h1>A. AWAN PORT CITY TRADERS</h1>
+            <span>(PRIVATE) LIMITED</span>
+          </div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#values">Values</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>A. AWAN PORT CITY TRADERS (PVT) LTD</h2>
+      <p class="tagline">CONNECTING MARKETS, CREATING OPPORTUNITIES</p>
+      <p class="subtext">Based in Pakistan, serving the world with dependable international trading solutions across Asia, Middle East, Africa, Europe, North America, and beyond.</p>
+      <a href="#contact" class="cta-btn">Send Inquiry</a>
+    </div>
+  </section>
+
+  <!-- Pillars Strip -->
+  <div class="container">
+    <div class="pillars-strip">
+      <div class="pillars-grid">
+        <div class="pillar-item">
+          <h4>GLOBAL CONNECTIONS</h4>
+          <p>Worldwide Trading Network</p>
+        </div>
+        <div class="pillar-item">
+          <h4>RELIABLE PARTNERSHIPS</h4>
+          <p>Built on Integrity & Trust</p>
+        </div>
+        <div class="pillar-item">
+          <h4>QUALITY ASSURANCE</h4>
+          <p>Strict Product Standards</p>
+        </div>
+        <div class="pillar-item">
+          <h4>GROWTH DRIVEN</h4>
+          <p>Expanding Market Reach</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About & Mission Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Company Profile</h2>
+        <p>IMPORT | EXPORT | GENERAL TRADING</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-box">
+          <h3>About Us</h3>
+          <p>A. Awan Port City Traders (Private) Limited is a Pakistan-based import, export, and general trading company dedicated to delivering quality products, reliable services, and value-driven solutions to customers worldwide.</p>
+          <p style="margin-top: 12px;">We aim to build long-term business relationships through integrity, professionalism, and a strong commitment to customer satisfaction.</p>
+        </div>
+
+        <div class="about-box">
+          <h3>Our Mission & Vision</h3>
+          <p><strong>Mission:</strong> To provide dependable international trading solutions by connecting global buyers with trusted suppliers and delivering quality products at competitive prices.</p>
+          <p style="margin-top: 12px;"><strong>Vision:</strong> To become a recognized international trading company known for integrity, professionalism, and customer satisfaction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Portfolio -->
+  <section id="products" class="products-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Product Portfolio</h2>
+        <p>We deal in a wide range of products based on customer requirements</p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card"><span class="icon">■</span><h4>Agricultural Products</h4></div>
+        <div class="product-card"><span class="icon">■</span><h4>Food Commodities</h4></div>
+        <div class="product-card"><span class="icon">■</span><h4>Textiles & Garments</h4></div>
+        <div class="product-card"><span class="icon">■</span><h4>Leather Products</h4></div>
+        <div class="product-card"><span class="icon">■</span><h4>Sports Goods</h4></div>
+        <div class="product-card"><span class="icon">■</span><h4>Surgical Instruments</h4></div>
+        <div class="product-card"><span class="icon">■</span><h4>Construction Materials</h4></div>
+        <div class="product-card"><span class="icon">■</span><h4>Chemicals</h4></div>
+        <div class="product-card"><span class="icon">■</span><h4>Industrial Equipment & Machinery</h4></div>
+        <div class="product-card"><span class="icon">■</span><h4>Electrical & Electronic Products</h4></div>
+        <div class="product-card"><span class="icon">■</span><h4>Household & Consumer Goods</h4></div>
+        <div class="product-card"><span class="icon">■</span><h4>Auto Parts & Packaging Materials</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us & Values -->
+  <section id="values" class="values-section">
+    <div class="container">
+      <div class="values-grid">
+        <div class="about-box" style="border-left-color: var(--primary-navy);">
+          <h3>Why Choose Us</h3>
+          <ul class="values-list">
+            <li>Registered Private Limited Company</li>
+            <li>Wide Range of Quality Products</li>
+            <li>Competitive Prices & Strong Supplier Network</li>
+            <li>Timely Delivery & Efficient Service</li>
+            <li>Customer-Focused Approach</li>
+            <li>Commitment to Long-Term Partnerships</li>
+          </ul>
+        </div>
+
+        <div class="about-box" style="border-left-color: var(--primary-navy);">
+          <h3>Our Core Values</h3>
+          <ul class="values-list">
+            <li>Integrity & Transparency</li>
+            <li>Quality & Excellence</li>
+            <li>Customer Satisfaction</li>
+            <li>Reliable Partnerships</li>
+            <li>Innovation & Growth</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section (Formspree + Zoho Integration) -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-wrapper">
+        
+        <!-- Left Side Details -->
+        <div class="contact-info-side">
+          <h2>Contact Us</h2>
+          <p>We look forward to building a successful and lasting partnership with your organization.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <strong>Official Email</strong>
+              <span>trade@awanportcitytraders.com</span>
+            </div>
+            <div class="contact-item">
+              <strong>Phone Numbers</strong>
+              <span>+971 526 553 541 (UAE)<br>+92 311 204 0915 (PK)</span>
+            </div>
+            <div class="contact-item">
+              <strong>Head Office Location</strong>
+              <span>Karachi, Pakistan</span>
+            </div>
+            <div class="contact-item">
+              <strong>Official Website</strong>
+              <span>www.awanportcitytraders.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side Formspree AJAX Form -->
+        <div class="contact-form-side">
+          <form id="trade-inquiry-form" action="https://formspree.io/f/xwvgqgdr" method="POST">
+            
+            <!-- Honeypot Field for Spam Protection -->
+            <input type="text" name="_gotcha" class="gotcha-field" tabindex="-1" autocomplete="off">
+
+            <div class="form-group">
+              <label for="name">Company / Contact Person Name</label>
+              <input type="text" id="name" name="name" placeholder="Your Name or Company Name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Business Email Address</label>
+              <input type="email" id="email" name="_replyto" placeholder="name@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+92 ... / +971 ...">
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Product Interest / Subject</label>
+              <input type="text" id="subject" name="_subject" placeholder="Inquiry regarding Agricultural / Textiles / Machinery" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Detailed Inquiry Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Specify quantity, destination port, and product requirements..." required></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="submit-btn">Submit Trade Inquiry</button>
+            <div id="status-message" class="status-msg"></div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 A. Awan Port City Traders (Private) Limited. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Submission Script (JS + AJAX) -->
   <script>
-    const form = document.getElementById("my-form");
+    const form = document.getElementById("trade-inquiry-form");
     const statusMsg = document.getElementById("status-message");
     const submitBtn = document.getElementById("submit-btn");
 
     async function handleSubmit(event) {
       event.preventDefault();
       
-      // Update button state while sending
       submitBtn.disabled = true;
-      submitBtn.innerText = "Sending...";
+      submitBtn.innerText = "Processing Inquiry...";
       statusMsg.className = "status-msg";
       statusMsg.style.display = "none";
 
@@ -201,7 +712,7 @@
         });
 
         if (response.ok) {
-          statusMsg.innerText = "Thank you! Your message has been sent to our Zoho Mail.";
+          statusMsg.innerText = "Thank you! Your inquiry has been sent to our Zoho Mail. We will contact you shortly.";
           statusMsg.classList.add("success");
           form.reset();
         } else {
@@ -209,16 +720,16 @@
           if (Object.hasOwn(result, 'errors')) {
             statusMsg.innerText = result["errors"].map(error => error["message"]).join(", ");
           } else {
-            statusMsg.innerText = "Oops! There was a problem submitting your form.";
+            statusMsg.innerText = "There was an issue sending your inquiry. Please try again.";
           }
           statusMsg.classList.add("error");
         }
       } catch (error) {
-        statusMsg.innerText = "Oops! Network error. Please try again later.";
+        statusMsg.innerText = "Connection error. Please check your network and try again.";
         statusMsg.classList.add("error");
       } finally {
         submitBtn.disabled = false;
-        submitBtn.innerText = "Send Message";
+        submitBtn.innerText = "Submit Trade Inquiry";
       }
     }
 
