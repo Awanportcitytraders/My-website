@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact A. Awan Port City Traders for import, export, product sourcing and general trading inquiries.">
+  <title>Contact & Trade Inquiry | A. Awan Port City Traders</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">Karachi, Pakistan | Connecting Markets, Creating Opportunities</div>
+  <header>
+    <a class="brand" href="index.html"><img src="logo.png" alt="Company logo"><span>A. AWAN PORT CITY TRADERS<small>IMPORT · EXPORT · GENERAL TRADING</small></span></a>
+    <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="index.html">Home</a><a href="about.html">About Us</a>
+      <a href="products.html">Products & Services</a><a class="active" href="contact.html">Contact</a>
+      <a class="nav-cta" href="#inquiry">Request a Quote ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <span class="eyebrow">Contact our team</span>
+      <h1>Tell us what your business needs.</h1>
+      <p>Share your product, quantity, specifications and destination market so we can review your inquiry.</p>
+    </section>
+
+    <section class="section">
+      <div class="contact-grid">
+        <aside class="contact-panel">
+          <h2>Let's connect</h2>
+          <p>For faster follow-up, include your product requirements and preferred delivery destination.</p>
+
+          <p><strong>Trade inquiries</strong><br>
+            <a href="mailto:trade@awanportcitytraders.com">trade@awanportcitytraders.com</a>
+          </p>
+          <p><strong>General inquiries</strong><br>
+            <a href="mailto:info@awanportcitytraders.com">info@awanportcitytraders.com</a>
+          </p>
+          <p><strong>UAE WhatsApp</strong><br>
+            <a href="https://wa.me/971526553541" target="_blank" rel="noopener">+971 52 655 3541 ↗</a>
+          </p>
+          <p><strong>Pakistan WhatsApp</strong><br>
+            <a href="https://wa.me/923112040915" target="_blank" rel="noopener">+92 311 204 0915 ↗</a>
+          </p>
+          <p><strong>Office location</strong><br>Karachi, Pakistan</p>
+        </aside>
+
+        <div class="contact-form" id="inquiry">
+          <h2>Send a Trade Inquiry</h2>
+          <p>Fields marked * are required.</p>
+
+          <form id="trade-inquiry" action="https://formspree.io/f/xwvgqgdr" method="POST">
+            <input type="hidden" name="_subject" value="New Trade Inquiry - A. Awan Port City Traders">
+
+            <div style="position:absolute;left:-9999px" aria-hidden="true">
+              <label>Leave this field empty<input name="_gotcha" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Name / Company *</label>
+                <input id="name" name="name" required placeholder="Your name or company">
+              </div>
+              <div class="field">
+                <label for="email">Business Email *</label>
+                <input id="email" name="_replyto" type="email" required placeholder="name@company.com">
+              </div>
+              <div class="field">
+                <label for="phone">Phone / WhatsApp</label>
+                <input id="phone" name="phone" placeholder="Country code + number">
+              </div>
+              <div class="field">
+                <label for="type">Inquiry Type *</label>
+                <select id="type" name="inquiry_type" required>
+                  <option value="">Choose type</option>
+                  <option>Import</option>
+                  <option>Export</option>
+                  <option>General Trading</option>
+                  <option>Product Sourcing</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="product">Product / Service *</label>
+                <input id="product" name="product" required placeholder="Product name">
+              </div>
+              <div class="field">
+                <label for="quantity">Quantity</label>
+                <input id="quantity" name="quantity" placeholder="e.g. 2 tonnes">
+              </div>
+              <div class="field">
+                <label for="destination">Origin / Destination</label>
+                <input id="destination" name="destination" placeholder="e.g. Pakistan to UAE">
+              </div>
+              <div class="field">
+                <label for="terms">Preferred Trade Terms</label>
+                <select id="terms" name="trade_terms">
+                  <option value="">Not sure yet</option>
+                  <option>EXW</option>
+                  <option>FOB</option>
+                  <option>CFR / CPT</option>
+                  <option>CIF / CIP</option>
+                  <option>DAP / DDP</option>
+                  <option>Discuss with us</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="message">Requirements & Specifications *</label>
+                <textarea id="message" name="message" required placeholder="Describe the product, grade, packaging, delivery timing and other requirements."></textarea>
+              </div>
+              <div class="field full">
+                <button class="button gold" type="submit">Send Trade Inquiry ↗</button>
+                <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><h3>A. Awan Port City Traders (Pvt) Ltd</h3><p>Connecting Markets, Creating Opportunities.</p></div>
+    <div><strong>Explore</strong><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products & Services</a></div>
+    <div><strong>Contact</strong><a href="mailto:trade@awanportcitytraders.com">trade@awanportcitytraders.com</a><a href="tel:+971526553541">UAE: +971 52 655 3541</a><a href="tel:+923112040915">Pakistan: +92 311 204 0915</a></div>
+  </footer>
+  <div class="copyright">© <span class="year"></span> A. Awan Port City Traders (Pvt) Ltd.</div>
+  <a class="whatsapp" href="https://wa.me/971526553541" target="_blank" rel="noopener">WhatsApp Us</a>
+  <script src="script.js"></script>
+</body>
+</html>
