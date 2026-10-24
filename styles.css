@@ -327,3 +327,41 @@ button:disabled {
   opacity: .65;
   cursor: wait;
 }
+
+/* Product image sizing and desktop/mobile consistency */
+.cards .card > img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Visible only when the requested image cannot load */
+.image-fallback {
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f7fa;
+  color: #64748b;
+  font-size: 13px;
+  text-align: center;
+}
+
+.image-fallback[hidden] {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
