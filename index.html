@@ -1,145 +1,961 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>A. Awan Port City Traders (Pvt) Ltd | Global Trade</title>
+
   <meta name="description" content="A. Awan Port City Traders connects Pakistani suppliers with international buyers through export sourcing and trade coordination.">
+
   <meta name="theme-color" content="#071a33">
+
   <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Homepage slider styling -->
+  <style>
+    .hero-slider {
+      position: relative;
+      min-height: 480px;
+      overflow: hidden;
+      isolation: isolate;
+      background: #071a33;
+    }
+
+    .hero-slider .hero-slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      min-height: 480px;
+      padding: 65px 0 80px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .65s ease, visibility .65s ease;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(7, 26, 51, .94) 0%,
+          rgba(7, 26, 51, .78) 50%,
+          rgba(7, 26, 51, .32) 100%
+        ),
+        var(--slide-image);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-slider .hero-slide.active {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .hero-slider .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hero-slider .hero-content h1,
+    .hero-slider .hero-content p,
+    .hero-slider .hero-content .eyebrow {
+      color: #fff;
+    }
+
+    .hero-slider .hero-content h1 span {
+      color: #f2ca55;
+    }
+
+    .hero-slider .hero-content p {
+      max-width: 620px;
+    }
+
+    .hero-slider .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-slider .hero-arrow {
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 50%;
+      background: rgba(7,26,51,.7);
+      color: #fff;
+      font-size: 29px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .hero-slider .hero-prev {
+      left: 18px;
+    }
+
+    .hero-slider .hero-next {
+      right: 18px;
+    }
+
+    .hero-slider .hero-arrow:hover {
+      background: #d4a017;
+      color: #071a33;
+    }
+
+    .hero-slider .hero-dots {
+      position: absolute;
+      z-index: 6;
+      bottom: 22px;
+      left: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+      width: calc(100% - 100px);
+      transform: translateX(-50%);
+    }
+
+    .hero-slider .hero-dot {
+      width: 10px;
+      height: 10px;
+      flex: 0 0 10px;
+      padding: 0;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .hero-slider .hero-dot.active {
+      background: #f2ca55;
+      border-color: #f2ca55;
+      transform: scale(1.2);
+    }
+
+    .hero-slider .hero-arrow:focus-visible,
+    .hero-slider .hero-dot:focus-visible {
+      outline: 2px solid #f2ca55;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-slider,
+      .hero-slider .hero-slide {
+        min-height: 430px;
+      }
+
+      .hero-slider .hero-slide {
+        padding: 45px 0 75px;
+        background-position: center;
+      }
+
+      .hero-slider .hero-content {
+        padding-left: 46px;
+        padding-right: 46px;
+      }
+
+      .hero-slider .hero-content h1 {
+        font-size: clamp(27px, 7vw, 40px);
+      }
+
+      .hero-slider .hero-content p {
+        font-size: 15px;
+      }
+
+      .hero-slider .hero-arrow {
+        width: 33px;
+        height: 33px;
+        font-size: 24px;
+      }
+
+      .hero-slider .hero-prev {
+        left: 6px;
+      }
+
+      .hero-slider .hero-next {
+        right: 6px;
+      }
+
+      .hero-slider .hero-dots {
+        bottom: 18px;
+        gap: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-slider .hero-slide {
+        transition: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
+  <!-- TOP BAR -->
   <div class="topbar">
     <div class="container">
       <span>Karachi, Pakistan · International Trade</span>
-      <span>Email: <a href="mailto:trade@awanportcitytraders.com">trade@awanportcitytraders.com</a></span>
+      <span>
+        Email:
+        <a href="mailto:trade@awanportcitytraders.com">
+          trade@awanportcitytraders.com
+        </a>
+      </span>
     </div>
   </div>
 
+  <!-- HEADER -->
   <header class="site-header">
     <nav class="container nav">
+
       <a class="brand" href="index.html">
         <img src="logo.png" alt="A. Awan Port City Traders logo">
-        <span class="brand-text">A. AWAN PORT CITY TRADERS<small>CONNECTING MARKETS, CREATING OPPORTUNITIES</small></span>
+
+        <span class="brand-text">
+          A. AWAN PORT CITY TRADERS
+          <small>CONNECTING MARKETS, CREATING OPPORTUNITIES</small>
+        </span>
       </a>
-      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰ Menu</button>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false">
+        ☰ Menu
+      </button>
+
       <div class="nav-links">
         <a class="active" href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="products.html">Products & Services</a>
         <a href="contact.html">Contact</a>
-        <a class="btn btn-gold" href="contact.html#inquiry">Trade Inquiry</a>
+        <a class="btn btn-gold" href="contact.html#inquiry">
+          Trade Inquiry
+        </a>
       </div>
+
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-content">
-        <span class="eyebrow">Pakistan · UAE · Global Markets</span>
-        <h1>Connecting Markets.<br><span>Creating Opportunities.</span></h1>
-        <p>A. Awan Port City Traders (Pvt) Ltd connects Pakistani products and reliable suppliers with international buyers through professional sourcing, export coordination and trade solutions.</p>
-        <div class="hero-actions">
-          <a class="btn btn-gold" href="contact.html#inquiry">Request a Trade Quote →</a>
-          <a class="btn btn-outline" href="https://wa.me/971526553541" target="_blank" rel="noopener">WhatsApp Our Team</a>
+
+    <!-- AUTOMATIC 10-PRODUCT HOMEPAGE SLIDER -->
+    <section class="hero hero-slider" aria-label="Featured products">
+
+      <!-- 1. GREEN CHILLI -->
+      <div class="hero-slide active"
+           style="--slide-image: url('images/fresh-green-chillies.jpg')">
+        <div class="container hero-content">
+          <span class="eyebrow">PAKISTAN · AGRICULTURAL EXPORTS</span>
+          <h1>Fresh Green Chillies.<br><span>Global Opportunities.</span></h1>
+          <p>
+            Explore Pakistani green chilli sourcing for international
+            buyers, subject to seasonal availability and buyer requirements.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="contact.html#inquiry">
+              Inquire About Green Chillies →
+            </a>
+            <a class="btn btn-outline" href="products.html">
+              Explore Products
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. KINNOW ORANGES -->
+      <div class="hero-slide"
+           style="--slide-image: url('images/kinnow-oranges.jpg')">
+        <div class="container hero-content">
+          <span class="eyebrow">PAKISTANI CITRUS</span>
+          <h1>Fresh Kinnow Oranges.<br><span>Connecting Markets.</span></h1>
+          <p>
+            Discuss seasonal kinnow sourcing, grading, packaging
+            and potential export requirements for your market.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="contact.html#inquiry">
+              Inquire About Kinnow →
+            </a>
+            <a class="btn btn-outline" href="products.html">
+              Explore Products
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. BASMATI RICE -->
+      <div class="hero-slide"
+           style="--slide-image: url('images/basmati-rice.jpg')">
+        <div class="container hero-content">
+          <span class="eyebrow">PAKISTANI BASMATI RICE</span>
+          <h1>Rice Sourcing.<br><span>International Trade.</span></h1>
+          <p>
+            Discuss rice varieties, grades, packing options,
+            order quantities and destination requirements.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="contact.html#inquiry">
+              Request a Rice Quote →
+            </a>
+            <a class="btn btn-outline" href="products.html">
+              Explore Products
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. TEXTILES -->
+      <div class="hero-slide"
+           style="--slide-image: url('images/pakistani-textile.jpg')">
+        <div class="container hero-content">
+          <span class="eyebrow">PAKISTANI TEXTILES</span>
+          <h1>Textile Products.<br><span>Trade Possibilities.</span></h1>
+          <p>
+            Explore textile sourcing based on material, product
+            specifications, order quantity and packaging preferences.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="contact.html#inquiry">
+              Inquire About Textiles →
+            </a>
+            <a class="btn btn-outline" href="products.html">
+              Explore Products
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. MANGOES -->
+      <div class="hero-slide"
+           style="--slide-image: url('images/pakistani-mangoes.jpg')">
+        <div class="container hero-content">
+          <span class="eyebrow">PAKISTANI MANGOES</span>
+          <h1>From Pakistan.<br><span>To Global Markets.</span></h1>
+          <p>
+            Explore seasonal Pakistani mango sourcing with
+            specifications, packaging and shipment options discussed
+            according to buyer requirements.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="contact.html#inquiry">
+              Request a Mango Quote →
+            </a>
+            <a class="btn btn-outline" href="products.html">
+              Explore Products
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. PEANUTS -->
+      <div class="hero-slide"
+           style="--slide-image: url('images/peanuts.jpg')">
+        <div class="container hero-content">
+          <span class="eyebrow">AGRICULTURAL COMMODITIES</span>
+          <h1>Pakistani Peanuts.<br><span>Ready for Trade.</span></h1>
+          <p>
+            Discuss peanut specifications, packaging, quantities
+            and potential export arrangements with our trade team.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="contact.html#inquiry">
+              Inquire About Peanuts →
+            </a>
+            <a class="btn btn-outline" href="products.html">
+              Explore Products
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. PINK SALT -->
+      <div class="hero-slide"
+           style="--slide-image: url('images/pink-salt.jpg')">
+        <div class="container hero-content">
+          <span class="eyebrow">PAKISTANI HIMALAYAN PINK SALT</span>
+          <h1>Natural Pink Salt.<br><span>Global Trade Opportunities.</span></h1>
+          <p>
+            Explore Pakistani Himalayan pink salt products,
+            with grades, sizes, packaging and order quantities
+            confirmed according to buyer requirements.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="contact.html#inquiry">
+              Inquire About Pink Salt →
+            </a>
+            <a class="btn btn-outline" href="products.html">
+              Explore Products
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. RED ONIONS -->
+      <div class="hero-slide"
+           style="--slide-image: url('images/red-onions.jpg')">
+        <div class="container hero-content">
+          <span class="eyebrow">FRESH AGRICULTURAL PRODUCE</span>
+          <h1>Red Onions.<br><span>Connecting Buyers and Suppliers.</span></h1>
+          <p>
+            Discuss onion sizing, quantities, packaging and
+            seasonal availability for your destination market.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="contact.html#inquiry">
+              Inquire About Onions →
+            </a>
+            <a class="btn btn-outline" href="products.html">
+              Explore Products
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. SALT BRICKS -->
+      <div class="hero-slide"
+           style="--slide-image: url('images/salt-bricks.jpg')">
+        <div class="container hero-content">
+          <span class="eyebrow">HIMALAYAN SALT PRODUCTS</span>
+          <h1>Pink Salt Bricks.<br><span>Distinctive Pakistani Products.</span></h1>
+          <p>
+            Discuss salt brick dimensions, finish, packing,
+            quantities and intended market requirements.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="contact.html#inquiry">
+              Inquire About Salt Bricks →
+            </a>
+            <a class="btn btn-outline" href="products.html">
+              Explore Products
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. APPLES -->
+      <div class="hero-slide"
+           style="--slide-image: url('images/fresh-apples.jpg')">
+        <div class="container hero-content">
+          <span class="eyebrow">FRESH FRUIT SOURCING</span>
+          <h1>Fresh Apples.<br><span>New Trade Possibilities.</span></h1>
+          <p>
+            Share your preferred quantity, grading, packaging
+            and destination to discuss apple sourcing possibilities.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="contact.html#inquiry">
+              Inquire About Apples →
+            </a>
+            <a class="btn btn-outline" href="products.html">
+              Explore Products
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDER CONTROLS -->
+      <button class="hero-arrow hero-prev"
+              type="button"
+              aria-label="Previous product">‹</button>
+
+      <button class="hero-arrow hero-next"
+              type="button"
+              aria-label="Next product">›</button>
+
+      <div class="hero-dots" aria-label="Choose a product slide">
+        <button class="hero-dot active" type="button" aria-label="Slide 1" aria-current="true"></button>
+        <button class="hero-dot" type="button" aria-label="Slide 2"></button>
+        <button class="hero-dot" type="button" aria-label="Slide 3"></button>
+        <button class="hero-dot" type="button" aria-label="Slide 4"></button>
+        <button class="hero-dot" type="button" aria-label="Slide 5"></button>
+        <button class="hero-dot" type="button" aria-label="Slide 6"></button>
+        <button class="hero-dot" type="button" aria-label="Slide 7"></button>
+        <button class="hero-dot" type="button" aria-label="Slide 8"></button>
+        <button class="hero-dot" type="button" aria-label="Slide 9"></button>
+        <button class="hero-dot" type="button" aria-label="Slide 10"></button>
+      </div>
+
+    </section>
+
+    <!-- COMPANY STATISTICS -->
+    <section class="stat-strip">
+      <div class="container stat-grid">
+        <div>
+          <strong>Pakistan Based</strong>
+          <span>Local sourcing network</span>
+        </div>
+        <div>
+          <strong>Global Markets</strong>
+          <span>International trade focus</span>
+        </div>
+        <div>
+          <strong>Buyer Focused</strong>
+          <span>Requirements-led quotations</span>
         </div>
       </div>
     </section>
 
-    <section class="stat-strip">
-      <div class="container stat-grid">
-        <div><strong>Pakistan Based</strong><span>Local sourcing network</span></div>
-        <div><strong>Global Markets</strong><span>International trade focus</span></div>
-        <div><strong>Buyer Focused</strong><span>Requirements-led quotations</span></div>
-      </div>
-    </section>
-
+    <!-- WHAT WE DO -->
     <section class="section">
       <div class="container">
+
         <div class="section-heading">
           <span class="eyebrow" style="color:#946c00">What We Do</span>
           <h2>Trade Solutions Built Around Your Requirements</h2>
           <div class="gold-line"></div>
-          <p>We work to connect buyers with suitable Pakistani products and suppliers, with clear communication throughout the inquiry and sourcing process.</p>
+          <p>
+            We work to connect buyers with suitable Pakistani products
+            and suppliers, with clear communication throughout the
+            inquiry and sourcing process.
+          </p>
         </div>
+
         <div class="grid-3">
-          <article class="card"><div class="card-body"><h3>Export Sourcing</h3><p>Selected Pakistani products sourced according to buyer specifications, quantity and destination requirements.</p></div></article>
-          <article class="card"><div class="card-body"><h3>Product Supply</h3><p>Trade inquiries for agricultural commodities, rice, textiles, pink salt and other products subject to availability.</p></div></article>
-          <article class="card"><div class="card-body"><h3>Trade Coordination</h3><p>Quotation support, documentation coordination and shipment arrangements according to agreed terms.</p></div></article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3>Export Sourcing</h3>
+              <p>
+                Selected Pakistani products sourced according to
+                buyer specifications, quantity and destination
+                requirements.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3>Product Supply</h3>
+              <p>
+                Trade inquiries for agricultural commodities,
+                rice, textiles, pink salt and other products,
+                subject to availability.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-body">
+              <h3>Trade Coordination</h3>
+              <p>
+                Quotation support, documentation coordination
+                and shipment arrangements according to
+                agreed terms.
+              </p>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
+    <!-- PRODUCT PORTFOLIO -->
     <section class="section section-soft">
       <div class="container">
+
         <div class="section-heading">
           <span class="eyebrow" style="color:#946c00">Our Portfolio</span>
           <h2>Products from Pakistan</h2>
-          <p>Ask our team about specifications, packaging, order quantities and availability for your market.</p>
+          <p>
+            Ask our team about specifications, packaging,
+            order quantities and availability for your market.
+          </p>
         </div>
+
         <div class="grid-3">
+
           <article class="card">
-            <img class="card-image" src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=700&q=80" alt="Fresh mangoes" loading="lazy">
-            <div class="card-body"><h3>Mangoes & Fresh Produce</h3><p>Seasonal fruits and selected agricultural products.</p><a class="text-link" href="products.html">Explore products →</a></div>
+            <img
+              class="card-image"
+              src="images/pakistani-mangoes.jpg"
+              alt="Pakistani mangoes"
+              loading="lazy">
+            <div class="card-body">
+              <h3>Mangoes & Fresh Produce</h3>
+              <p>
+                Seasonal mangoes, fruits and selected
+                agricultural products.
+              </p>
+              <a class="text-link" href="products.html">
+                Explore products →
+              </a>
+            </div>
           </article>
+
           <article class="card">
-            <img class="card-image" src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=700&q=80" alt="Rice grains" loading="lazy">
-            <div class="card-body"><h3>Rice & Food Commodities</h3><p>Rice and other food commodities subject to sourcing and specifications.</p><a class="text-link" href="products.html">Explore products →</a></div>
+            <img
+              class="card-image"
+              src="images/basmati-rice.jpg"
+              alt="Pakistani basmati rice"
+              loading="lazy">
+            <div class="card-body">
+              <h3>Rice & Food Commodities</h3>
+              <p>
+                Rice and other food commodities subject
+                to sourcing and buyer specifications.
+              </p>
+              <a class="text-link" href="products.html">
+                Explore products →
+              </a>
+            </div>
           </article>
+
           <article class="card">
-            <img class="card-image" src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80" alt="Textile fabric" loading="lazy">
-            <div class="card-body"><h3>Textiles & Garments</h3><p>Textile sourcing based on product, fabric and buyer requirements.</p><a class="text-link" href="products.html">Explore products →</a></div>
+            <img
+              class="card-image"
+              src="images/pakistani-textile.jpg"
+              alt="Pakistani textile products"
+              loading="lazy">
+            <div class="card-body">
+              <h3>Textiles & Garments</h3>
+              <p>
+                Textile sourcing based on product, fabric
+                and buyer requirements.
+              </p>
+              <a class="text-link" href="products.html">
+                Explore products →
+              </a>
+            </div>
           </article>
+
+          <article class="card">
+            <img
+              class="card-image"
+              src="images/pink-salt.jpg"
+              alt="Pakistani Himalayan pink salt"
+              loading="lazy">
+            <div class="card-body">
+              <h3>Himalayan Pink Salt</h3>
+              <p>
+                Pink salt products and salt bricks,
+                subject to specifications and availability.
+              </p>
+              <a class="text-link" href="products.html">
+                Explore products →
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              class="card-image"
+              src="images/fresh-green-chillies.jpg"
+              alt="Fresh green chillies"
+              loading="lazy">
+            <div class="card-body">
+              <h3>Green Chillies & Vegetables</h3>
+              <p>
+                Fresh produce sourcing according to seasonal
+                availability and destination requirements.
+              </p>
+              <a class="text-link" href="products.html">
+                Explore products →
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              class="card-image"
+              src="images/kinnow-oranges.jpg"
+              alt="Fresh kinnow oranges"
+              loading="lazy">
+            <div class="card-body">
+              <h3>Kinnow, Apples & Other Produce</h3>
+              <p>
+                Seasonal fruit sourcing inquiries based on
+                quantity, grading, packaging and destination.
+              </p>
+              <a class="text-link" href="products.html">
+                Explore products →
+              </a>
+            </div>
+          </article>
+
         </div>
-        <p style="margin-top:24px"><a class="btn btn-gold" href="products.html">View Products & Services</a></p>
+
+        <p style="margin-top:24px">
+          <a class="btn btn-gold" href="products.html">
+            View Products & Services
+          </a>
+        </p>
+
       </div>
     </section>
 
+    <!-- WHY WORK WITH US -->
     <section class="section">
       <div class="container grid-2">
+
         <div>
-          <span class="eyebrow" style="color:#946c00">Why Work With Us</span>
+          <span class="eyebrow" style="color:#946c00">
+            Why Work With Us
+          </span>
+
           <h2>Built on Trust and Clear Communication</h2>
-          <p>We aim to make trade inquiries straightforward, with attention to product details, commercial terms and buyer expectations.</p>
+
+          <p>
+            We aim to make trade inquiries straightforward,
+            with attention to product details, commercial
+            terms and buyer expectations.
+          </p>
+
           <ul class="feature-list">
             <li>Buyer-focused product sourcing</li>
             <li>Clear quotation and requirement discussions</li>
             <li>Trade coordination according to agreed terms</li>
             <li>Focus on long-term business relationships</li>
           </ul>
-          <a class="btn btn-gold" href="about.html">Learn About Our Company</a>
+
+          <a class="btn btn-gold" href="about.html">
+            Learn About Our Company
+          </a>
         </div>
+
         <div class="card">
-          <img class="card-image" style="height:300px" src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=80" alt="Cargo containers at a shipping port" loading="lazy">
-          <div class="card-body"><h3>From Supplier to International Buyer</h3><p>Share your product, quantity, packaging and destination. We will review the request and discuss possible next steps.</p></div>
+          <img
+            class="card-image"
+            style="height:300px"
+            src="images/pakistani-mangoes.jpg"
+            alt="Pakistani mangoes available for sourcing inquiries"
+            loading="lazy">
+
+          <div class="card-body">
+            <h3>From Supplier to International Buyer</h3>
+            <p>
+              Share your product, quantity, packaging and
+              destination. We will review the request and
+              discuss possible next steps.
+            </p>
+          </div>
         </div>
+
       </div>
     </section>
 
+    <!-- CALL TO ACTION -->
     <section class="section section-soft">
       <div class="container">
         <div class="cta">
-          <div><h2>Have a Product Requirement?</h2><p>Send us your inquiry to discuss sourcing and export possibilities.</p></div>
-          <a class="btn btn-gold" href="contact.html#inquiry">Start a Trade Inquiry →</a>
+          <div>
+            <h2>Have a Product Requirement?</h2>
+            <p>
+              Send us your inquiry to discuss sourcing
+              and export possibilities.
+            </p>
+          </div>
+
+          <a class="btn btn-gold" href="contact.html#inquiry">
+            Start a Trade Inquiry →
+          </a>
         </div>
       </div>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
+
       <div class="footer-grid">
-        <div><img src="logo.png" alt="A. Awan Port City Traders" style="width:75px;height:75px;object-fit:contain;background:white;border-radius:8px;padding:4px"><p>Connecting markets and creating opportunities through professional trading and export sourcing.</p></div>
-        <div><h3>Quick Links</h3><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="products.html">Products & Services</a><a href="contact.html">Contact & Inquiry</a></div></div>
-        <div><h3>Contact</h3><p>Karachi, Pakistan</p><p><a href="mailto:trade@awanportcitytraders.com">trade@awanportcitytraders.com</a></p><p><a href="https://wa.me/923112040915">Pakistan WhatsApp</a></p><p><a href="https://wa.me/971526553541">UAE WhatsApp</a></p></div>
+
+        <div>
+          <img
+            src="logo.png"
+            alt="A. Awan Port City Traders logo"
+            style="width:75px;height:75px;object-fit:contain;background:white;border-radius:8px;padding:4px">
+
+          <p>
+            Connecting markets and creating opportunities
+            through professional trading and export sourcing.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products & Services</a>
+            <a href="contact.html">Contact & Inquiry</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <p>Karachi, Pakistan</p>
+
+          <p>
+            <a href="mailto:trade@awanportcitytraders.com">
+              trade@awanportcitytraders.com
+            </a>
+          </p>
+
+          <p>
+            <a href="https://wa.me/923112040915"
+               target="_blank"
+               rel="noopener noreferrer">
+              Pakistan WhatsApp
+            </a>
+          </p>
+
+          <p>
+            <a href="https://wa.me/971526553541"
+               target="_blank"
+               rel="noopener noreferrer">
+              UAE WhatsApp
+            </a>
+          </p>
+        </div>
+
       </div>
-      <div class="footer-bottom">© 2026 A. Awan Port City Traders (Pvt) Ltd. All rights reserved.</div>
+
+      <div class="footer-bottom">
+        © 2026 A. Awan Port City Traders (Pvt) Ltd.
+        All rights reserved.
+      </div>
+
     </div>
   </footer>
-  <a class="whatsapp-float" href="https://wa.me/971526553541" target="_blank" rel="noopener">WhatsApp ↗</a>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/971526553541"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact our team on WhatsApp">
+    WhatsApp ↗
+  </a>
+
+  <!-- EXISTING WEBSITE JAVASCRIPT -->
   <script src="script.js"></script>
+
+  <!-- HOMEPAGE SLIDER FUNCTIONALITY -->
+  <script>
+    (() => {
+      const slider = document.querySelector(".hero-slider");
+      if (!slider || slider.dataset.sliderInitialized === "true") return;
+
+      slider.dataset.sliderInitialized = "true";
+
+      const slides = Array.from(
+        slider.querySelectorAll(".hero-slide")
+      );
+
+      const dots = Array.from(
+        slider.querySelectorAll(".hero-dot")
+      );
+
+      const previous = slider.querySelector(".hero-prev");
+      const next = slider.querySelector(".hero-next");
+
+      if (!slides.length) return;
+
+      let current = 0;
+      let timer = null;
+
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+
+      function showSlide(index) {
+        current = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+          const active = i === current;
+
+          slide.classList.toggle("active", active);
+          slide.setAttribute("aria-hidden", String(!active));
+        });
+
+        dots.forEach((dot, i) => {
+          const active = i === current;
+
+          dot.classList.toggle("active", active);
+
+          if (active) {
+            dot.setAttribute("aria-current", "true");
+          } else {
+            dot.removeAttribute("aria-current");
+          }
+        });
+      }
+
+      function stopTimer() {
+        if (timer !== null) {
+          window.clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      function startTimer() {
+        stopTimer();
+
+        if (
+          !reducedMotion.matches &&
+          !document.hidden &&
+          !slider.matches(":hover") &&
+          !slider.contains(document.activeElement)
+        ) {
+          timer = window.setInterval(() => {
+            showSlide(current + 1);
+          }, 5000);
+        }
+      }
+
+      previous.addEventListener("click", () => {
+        showSlide(current - 1);
+        startTimer();
+      });
+
+      next.addEventListener("click", () => {
+        showSlide(current + 1);
+        startTimer();
+      });
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          showSlide(i);
+          startTimer();
+        });
+      });
+
+      slider.addEventListener("mouseenter", stopTimer);
+      slider.addEventListener("mouseleave", startTimer);
+      slider.addEventListener("focusin", stopTimer);
+
+      slider.addEventListener("focusout", () => {
+        window.setTimeout(startTimer, 0);
+      });
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          stopTimer();
+        } else {
+          startTimer();
+        }
+      });
+
+      if (reducedMotion.addEventListener) {
+        reducedMotion.addEventListener("change", startTimer);
+      }
+
+      showSlide(0);
+      startTimer();
+    })();
+  </script>
+
 </body>
 </html>
