@@ -313,24 +313,28 @@ footer a:hover { color: var(--gold-light); }
   .trust { padding: 18px 3%; }
   .trust div { padding: 8px; }
 }
-/* Product image size fix */
+
+/* Professional product image sizing */
 .cards .card img {
   display: block;
   width: 100%;
-  height: 180px;
+  height: 210px;
   object-fit: cover;
   object-position: center;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
-/* Product cards */
-.cards .card {
-  overflow: hidden;
-}
-
-/* Smaller images on mobile */
-@media (max-width: 600px) {
+/* Desktop and laptop */
+@media (min-width: 768px) {
   .cards .card img {
-    height: 150px;
+    height: 210px;
   }
 }
+
+/* Mobile phones */
+@media (max-width: 767px) {
+  .cards .card img {
+    height: 170px;
+  }
+}
+
