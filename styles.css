@@ -313,3 +313,17 @@ footer a:hover { color: var(--gold-light); }
   .trust { padding: 18px 3%; }
   .trust div { padding: 8px; }
 }
+.text-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #a77c08;
+  font-size: 12px;
+  font-weight: 800;
+}
+.text-link:hover {
+  color: var(--navy);
+}
+button:disabled {
+  opacity: .65;
+  cursor: wait;
+}
