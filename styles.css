@@ -548,3 +548,65 @@ header nav a.nav-cta:hover {
   }
 }
 
+/* Director's profile section */
+.director-profile {
+  align-items: center;
+  gap: 40px;
+}
+
+.director-photo {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.director-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+  border: 3px solid #d4a017;
+  box-shadow: 0 12px 30px rgba(7, 26, 51, 0.12);
+}
+
+.director-content h2 {
+  margin-bottom: 18px;
+}
+
+.director-content h3 {
+  color: #12395f;
+  margin-bottom: 6px;
+}
+
+.director-role {
+  color: #b8860b;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.director-content p {
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.director-signoff {
+  font-weight: 600;
+  color: #12395f;
+}
+
+@media (max-width: 768px) {
+  .director-profile {
+    gap: 24px;
+  }
+
+  .director-photo {
+    max-width: 280px;
+  }
+
+  .director-content {
+    width: 100%;
+  }
+}
+
