@@ -446,83 +446,6 @@ button, input, select, textarea { font: inherit; }
   .card-image { height: 180px; }
 }
 
-/* =====================================
-   PROFESSIONAL NAVIGATION MENU
-   A. Awan Port City Traders (Pvt) Ltd
-===================================== */
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-/* Navigation layout */
-header nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-/* Separate navigation buttons */
-header nav a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 17px;
-  margin: 0;
-  border-radius: 7px;
-  border: 1px solid #dce4ed;
-  background-color: #ffffff;
-  color: #071a33;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.4;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.25s ease,
-              color 0.25s ease,
-              border-color 0.25s ease;
-}
-
-/* Hover effect */
-header nav a:hover {
-  background-color: #12395f;
-  color: #ffffff;
-  border-color: #12395f;
-}
-
-/* Current page */
-header nav a.active {
-  background-color: #12395f;
-  color: #ffffff;
-  border-color: #12395f;
-}
-
-/* Request a Quote button */
-header nav a.nav-cta {
-  background-color: #d4a017;
-  color: #071a33;
-  border: 1px solid #d4a017;
-  font-weight: 700;
-  padding: 12px 18px;
-}
-
-/* Quote button hover */
-header nav a.nav-cta:hover {
-  background-color: #f2ca55;
-  border-color: #f2ca55;
-  color: #071a33;
-}
-
-/* Mobile navigation */
-@media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-  }
 
   header nav {
     display: none;
@@ -548,54 +471,70 @@ header nav a.nav-cta:hover {
   }
 }
 
-
-/* ======================================
+/* =========================================
    COMPANY LEADERSHIP
-   A. Awan Port City Traders (Pvt) Ltd
-====================================== */
+   NAVY BLUE & GOLD DESIGN
+========================================= */
 
 .leadership-section {
   background: #f4f7fa;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
-/* Leadership cards layout */
+.leadership-section .section-title {
+  max-width: 760px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+/* Two-column desktop layout */
 .leadership-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
   max-width: 1100px;
-  margin: 35px auto 0;
+  margin: 0 auto;
+  align-items: start;
 }
 
-/* Individual director card */
+/* Individual director cards */
 .leader-card {
+  min-width: 0;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(7, 26, 51, 0.07);
-  transition: transform 0.25s ease,
-              box-shadow 0.25s ease;
+  box-shadow: 0 8px 24px rgba(7, 26, 51, 0.08);
+  transition: box-shadow 0.25s ease,
+              transform 0.25s ease;
 }
 
 .leader-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: 0 14px 30px rgba(7, 26, 51, 0.12);
 }
 
-/* Director photograph */
+/* Full photograph: NO CROPPING */
 .leader-photo {
   width: 100%;
-  background: #e9eef4;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
   overflow: hidden;
+  background: #edf1f5;
 }
 
 .leader-photo img {
   display: block;
   width: 100%;
-  height: 340px;
-  object-fit: cover;
-  object-position: center 25%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 6px;
 }
 
 /* Director information */
@@ -605,25 +544,26 @@ header nav a.nav-cta:hover {
 
 .leader-label {
   display: inline-block;
-  color: #8a6700;
-  background: #fff5d6;
-  padding: 6px 11px;
+  background: #fff4d1;
+  color: #806000;
+  padding: 7px 11px;
   border-radius: 5px;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.7px;
   text-transform: uppercase;
 }
 
 .leader-info h3 {
   color: #071a33;
   font-size: 23px;
-  line-height: 1.35;
-  margin: 16px 0 7px;
+  line-height: 1.4;
+  margin: 16px 0 6px;
+  overflow-wrap: anywhere;
 }
 
 .leader-role {
-  color: #b8860b;
+  color: #a87900;
   font-size: 15px;
   font-weight: 700;
   margin: 0 0 18px;
@@ -633,40 +573,48 @@ header nav a.nav-cta:hover {
   color: #526174;
   font-size: 14px;
   line-height: 1.8;
-  margin-bottom: 16px;
+  margin: 0 0 16px;
 }
 
-/* Contact link */
+/* Contact button */
 .leader-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 5px;
-  padding: 11px 16px;
+  padding: 12px 17px;
   background: #071a33;
   color: #ffffff;
   border: 1px solid #071a33;
   border-radius: 6px;
-  text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  transition: background 0.2s ease;
+  text-decoration: none;
+  transition: background 0.2s ease,
+              color 0.2s ease;
 }
 
 .leader-link:hover {
   background: #d4a017;
-  border-color: #d4a017;
   color: #071a33;
+  border-color: #d4a017;
 }
 
 /* Tablet and mobile */
 @media (max-width: 768px) {
-  .leadership-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-top: 25px;
+
+  .leadership-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
-  .leader-photo img {
-    height: 320px;
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .leader-photo {
+    height: 400px;
   }
 
   .leader-info {
@@ -678,14 +626,17 @@ header nav a.nav-cta:hover {
   }
 }
 
-/* Smaller mobile screens */
+/* Small mobile screens */
 @media (max-width: 380px) {
-  .leader-photo img {
-    height: 260px;
+
+  .leader-photo {
+    height: 320px;
+    padding: 8px;
   }
 
   .leader-info {
     padding: 17px;
   }
 }
+
 
