@@ -548,65 +548,144 @@ header nav a.nav-cta:hover {
   }
 }
 
-/* Director's profile section */
-.director-profile {
-  align-items: center;
-  gap: 40px;
+
+/* ======================================
+   COMPANY LEADERSHIP
+   A. Awan Port City Traders (Pvt) Ltd
+====================================== */
+
+.leadership-section {
+  background: #f4f7fa;
 }
 
-.director-photo {
+/* Leadership cards layout */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 35px auto 0;
+}
+
+/* Individual director card */
+.leader-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(7, 26, 51, 0.07);
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(7, 26, 51, 0.12);
+}
+
+/* Director photograph */
+.leader-photo {
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  background: #e9eef4;
+  overflow: hidden;
 }
 
-.director-photo img {
+.leader-photo img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 340px;
   object-fit: cover;
-  object-position: center;
-  border-radius: 14px;
-  border: 3px solid #d4a017;
-  box-shadow: 0 12px 30px rgba(7, 26, 51, 0.12);
+  object-position: center 25%;
 }
 
-.director-content h2 {
-  margin-bottom: 18px;
+/* Director information */
+.leader-info {
+  padding: 26px;
 }
 
-.director-content h3 {
-  color: #12395f;
-  margin-bottom: 6px;
+.leader-label {
+  display: inline-block;
+  color: #8a6700;
+  background: #fff5d6;
+  padding: 6px 11px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
 }
 
-.director-role {
+.leader-info h3 {
+  color: #071a33;
+  font-size: 23px;
+  line-height: 1.35;
+  margin: 16px 0 7px;
+}
+
+.leader-role {
   color: #b8860b;
-  font-weight: 600;
-  margin-bottom: 22px;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 18px;
 }
 
-.director-content p {
+.leader-info p:not(.leader-role) {
+  color: #526174;
+  font-size: 14px;
   line-height: 1.8;
   margin-bottom: 16px;
 }
 
-.director-signoff {
+/* Contact link */
+.leader-link {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 11px 16px;
+  background: #071a33;
+  color: #ffffff;
+  border: 1px solid #071a33;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
   font-weight: 600;
-  color: #12395f;
+  transition: background 0.2s ease;
 }
 
+.leader-link:hover {
+  background: #d4a017;
+  border-color: #d4a017;
+  color: #071a33;
+}
+
+/* Tablet and mobile */
 @media (max-width: 768px) {
-  .director-profile {
+  .leadership-grid {
+    grid-template-columns: 1fr;
     gap: 24px;
+    margin-top: 25px;
   }
 
-  .director-photo {
-    max-width: 280px;
+  .leader-photo img {
+    height: 320px;
   }
 
-  .director-content {
-    width: 100%;
+  .leader-info {
+    padding: 22px;
+  }
+
+  .leader-info h3 {
+    font-size: 21px;
+  }
+}
+
+/* Smaller mobile screens */
+@media (max-width: 380px) {
+  .leader-photo img {
+    height: 260px;
+  }
+
+  .leader-info {
+    padding: 17px;
   }
 }
 
