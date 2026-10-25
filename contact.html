@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -248,17 +247,6 @@
                 </button>
               </div>
 
-              <div class="field field-full">
-                <button
-                  class="btn"
-                  id="whatsappSubmit"
-                  style="background:#168b52;color:white"
-                  type="button"
-                >
-                  Continue by WhatsApp →
-                </button>
-              </div>
-
             </div>
 
             <p
@@ -272,9 +260,8 @@
           </form>
 
           <p style="color:#64748b;font-size:12px;margin-top:18px">
-            Submitting this form sends your inquiry for processing. Please
-            provide accurate contact information. WhatsApp inquiries open a
-            message for you to review and send.
+            Please provide accurate contact information. Your inquiry will be
+            submitted through our online form.
           </p>
 
         </div>
@@ -333,6 +320,7 @@
     </div>
   </footer>
 
+  <!-- Floating WhatsApp button remains available -->
   <a
     class="whatsapp-float"
     href="https://wa.me/971526553541"
@@ -348,7 +336,6 @@
     const tradeForm = document.getElementById("tradeForm");
     const formMessage = document.getElementById("formMessage");
     const submitButton = document.getElementById("submitInquiry");
-    const whatsappButton = document.getElementById("whatsappSubmit");
 
     tradeForm.addEventListener("submit", async function (event) {
       event.preventDefault();
@@ -405,32 +392,6 @@
         submitButton.disabled = false;
         submitButton.textContent = originalButtonText;
       }
-    });
-
-    whatsappButton.addEventListener("click", function () {
-      if (!tradeForm.reportValidity()) {
-        return;
-      }
-
-      const data = new FormData(tradeForm);
-
-      const message = [
-        "Trade Inquiry - A. Awan Port City Traders (Pvt) Ltd",
-        "",
-        "Name / Company: " + data.get("name"),
-        "Business Email: " + data.get("email"),
-        "Phone / WhatsApp: " + (data.get("phone") || "Not provided"),
-        "Product: " + data.get("product"),
-        "Quantity: " + data.get("quantity"),
-        "Destination: " + data.get("destination"),
-        "Inquiry Details: " + data.get("details")
-      ].join("\n");
-
-      window.open(
-        "https://wa.me/971526553541?text=" + encodeURIComponent(message),
-        "_blank",
-        "noopener"
-      );
     });
   </script>
 
