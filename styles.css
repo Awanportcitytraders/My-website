@@ -446,3 +446,105 @@ button, input, select, textarea { font: inherit; }
   .card-image { height: 180px; }
 }
 
+/* =====================================
+   PROFESSIONAL NAVIGATION MENU
+   A. Awan Port City Traders (Pvt) Ltd
+===================================== */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Navigation layout */
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Separate navigation buttons */
+header nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 17px;
+  margin: 0;
+  border-radius: 7px;
+  border: 1px solid #dce4ed;
+  background-color: #ffffff;
+  color: #071a33;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.25s ease,
+              color 0.25s ease,
+              border-color 0.25s ease;
+}
+
+/* Hover effect */
+header nav a:hover {
+  background-color: #12395f;
+  color: #ffffff;
+  border-color: #12395f;
+}
+
+/* Current page */
+header nav a.active {
+  background-color: #12395f;
+  color: #ffffff;
+  border-color: #12395f;
+}
+
+/* Request a Quote button */
+header nav a.nav-cta {
+  background-color: #d4a017;
+  color: #071a33;
+  border: 1px solid #d4a017;
+  font-weight: 700;
+  padding: 12px 18px;
+}
+
+/* Quote button hover */
+header nav a.nav-cta:hover {
+  background-color: #f2ca55;
+  border-color: #f2ca55;
+  color: #071a33;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  header nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  header nav.open {
+    display: flex;
+  }
+
+  header nav a {
+    width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+    padding: 13px 16px;
+  }
+
+  header nav a.nav-cta {
+    justify-content: center;
+  }
+}
+
