@@ -1,14 +1,14 @@
-
-/* =====================================================
+/* =========================================================
    A. AWAN PORT CITY TRADERS (PVT) LTD
-   PROFESSIONAL WEBSITE STYLESHEET
-   Navy Blue | Gold | White
-===================================================== */
+   PREMIUM INTERNATIONAL EXPORT WEBSITE
+   NAVY BLUE | GOLD | WHITE
+========================================================= */
 
-/* 1. DESIGN VARIABLES */
+/* 1. DESIGN SYSTEM */
 :root {
   --navy: #071a33;
   --navy2: #12395f;
+  --navy3: #1b456d;
   --gold: #d4a017;
   --gold-light: #f2ca55;
   --ink: #172334;
@@ -16,11 +16,17 @@
   --soft: #f4f7fa;
   --white: #ffffff;
   --line: #e2e8f0;
+
   --radius: 16px;
+  --radius-small: 8px;
+
   --shadow: 0 12px 35px rgba(7, 26, 51, 0.09);
+  --shadow-hover: 0 18px 40px rgba(7, 26, 51, 0.14);
+
+  --container: 1160px;
 }
 
-/* 2. GLOBAL STYLES */
+/* 2. RESET */
 *,
 *::before,
 *::after {
@@ -29,7 +35,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 110px;
 }
 
 body {
@@ -42,8 +48,8 @@ body {
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 a {
@@ -68,25 +74,19 @@ p {
 }
 
 .container {
-  width: min(1160px, 92%);
-  margin-left: auto;
-  margin-right: auto;
+  width: min(var(--container), 92%);
+  margin: 0 auto;
 }
 
-/* 3. TOP INFORMATION BAR */
+/* 3. TOP BAR */
 .topbar {
   background: var(--navy);
   color: var(--white);
   font-size: 12px;
-  padding: 8px 0;
-}
-
-.topbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px 20px;
+  font-weight: 600;
+  padding: 9px 4%;
+  text-align: center;
+  letter-spacing: 0.3px;
 }
 
 .topbar a {
@@ -97,7 +97,7 @@ p {
   color: var(--white);
 }
 
-/* 4. PROFESSIONAL HEADER */
+/* 4. HEADER */
 .site-header {
   position: sticky;
   top: 0;
@@ -112,11 +112,12 @@ body > header:not(.site-header) {
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 15px;
   padding: 12px 4%;
   background: var(--white);
   border-bottom: 1px solid var(--line);
@@ -124,14 +125,14 @@ body > header:not(.site-header) {
 }
 
 .nav {
-  min-height: 86px;
+  min-height: 82px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 22px;
 }
 
-/* Company branding */
+/* BRAND */
 .brand {
   display: flex;
   align-items: center;
@@ -170,14 +171,14 @@ body > header:not(.site-header) {
   opacity: 0.9;
 }
 
-/* 5. NAVIGATION LINKS */
+/* 5. NAVIGATION */
 .nav-links,
 body > header:not(.site-header) nav {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 9px;
+  gap: 8px;
 }
 
 .nav-links a,
@@ -185,19 +186,15 @@ body > header:not(.site-header) nav a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 11px 14px;
+  padding: 11px 13px;
   border: 1px solid var(--line);
   border-radius: 7px;
   background: var(--white);
   color: var(--navy);
   font-size: 13px;
   font-weight: 700;
-  line-height: 1.4;
   white-space: nowrap;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .nav-links a:hover,
@@ -226,11 +223,11 @@ body > header:not(.site-header) nav a.nav-cta {
 .nav-links a.nav-cta:hover,
 body > header:not(.site-header) nav a.nav-cta:hover {
   background: var(--gold-light);
-  color: var(--navy);
   border-color: var(--gold-light);
+  color: var(--navy);
 }
 
-/* Hamburger menu */
+/* 6. MOBILE MENU */
 .menu-toggle {
   display: none;
   align-items: center;
@@ -246,14 +243,18 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   cursor: pointer;
 }
 
-/* 6. BUTTONS */
+.menu-toggle:hover {
+  background: var(--navy2);
+}
+
+/* 7. BUTTONS */
 .btn,
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 20px;
+  padding: 12px 21px;
   border: 1px solid transparent;
   border-radius: 8px;
   font-size: 14px;
@@ -261,10 +262,7 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   line-height: 1.5;
   text-align: center;
   cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .btn-gold,
@@ -277,6 +275,7 @@ body > header:not(.site-header) nav a.nav-cta:hover {
 .button.gold:hover {
   background: var(--gold-light);
   color: var(--navy);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -288,7 +287,7 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* 7. HOMEPAGE HERO */
+/* 8. HOMEPAGE HERO */
 .hero {
   position: relative;
   color: var(--white);
@@ -300,11 +299,12 @@ body > header:not(.site-header) nav a.nav-cta:hover {
     ),
     url("https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1800&q=85")
     center / cover no-repeat;
-  padding: 100px 0;
+
+  padding: 110px 4%;
 }
 
 .hero-content {
-  max-width: 720px;
+  max-width: 760px;
 }
 
 .eyebrow {
@@ -321,7 +321,7 @@ body > header:not(.site-header) nav a.nav-cta:hover {
 }
 
 .hero h1 {
-  font-size: clamp(36px, 5.5vw, 62px);
+  font-size: clamp(36px, 5.5vw, 64px);
   line-height: 1.12;
   margin: 18px 0;
   letter-spacing: -1.2px;
@@ -332,10 +332,10 @@ body > header:not(.site-header) nav a.nav-cta:hover {
 }
 
 .hero p {
-  max-width: 620px;
+  max-width: 650px;
   color: #e1e8f0;
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .hero-actions {
@@ -346,29 +346,45 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   margin-top: 28px;
 }
 
-/* 8. INNER PAGE HERO */
+/* 9. INNER PAGE HERO */
 .page-hero {
-  background: linear-gradient(135deg, var(--navy), var(--navy2));
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(212, 160, 23, 0.14),
+      transparent 35%
+    ),
+    linear-gradient(135deg, var(--navy), var(--navy2));
+
   color: var(--white);
-  padding: 60px 4%;
+  padding: 85px 5%;
 }
 
 .page-hero h1 {
-  font-size: clamp(32px, 4vw, 46px);
-  line-height: 1.2;
-  margin: 10px 0 14px;
+  max-width: 850px;
+  font-size: clamp(34px, 5vw, 55px);
+  line-height: 1.18;
+  letter-spacing: -1px;
+  margin: 15px 0 20px;
 }
 
 .page-hero p {
-  max-width: 700px;
+  max-width: 720px;
   color: #d6e0ec;
-  margin-bottom: 0;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.85;
+  margin-bottom: 25px;
 }
 
-/* 9. SECTIONS AND HEADINGS */
+.page-hero .button {
+  margin-top: 10px;
+}
+
+/* 10. SECTIONS */
 .section {
-  padding: 68px 4%;
+  padding: 75px 4%;
 }
 
 .section-soft,
@@ -378,22 +394,26 @@ body > header:not(.site-header) nav a.nav-cta:hover {
 
 .section-heading,
 .section-title {
-  max-width: 760px;
-  margin: 0 auto 32px;
+  max-width: 780px;
+  margin: 0 auto 40px;
+}
+
+.section-title {
+  text-align: center;
 }
 
 .section-heading h2,
 .section-title h2 {
   color: var(--navy);
-  font-size: clamp(27px, 3.5vw, 38px);
+  font-size: clamp(27px, 3.5vw, 40px);
   line-height: 1.25;
-  margin: 8px 0 12px;
+  margin: 10px 0 15px;
 }
 
 .section-heading p,
 .section-title p {
   color: var(--muted);
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .gold-line {
@@ -404,12 +424,12 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   margin: 14px 0;
 }
 
-/* 10. RESPONSIVE GRID LAYOUTS */
+/* 11. GRID SYSTEM */
 .grid-2,
 .grid-3,
 .grid-4 {
   display: grid;
-  gap: 22px;
+  gap: 24px;
 }
 
 .grid-2 {
@@ -424,7 +444,7 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-/* 11. PRODUCT AND GENERAL CARDS */
+/* 12. CARDS */
 .card,
 .service {
   min-width: 0;
@@ -433,22 +453,24 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 5px 18px rgba(7, 26, 51, 0.035);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover,
 .service:hover {
+  transform: translateY(-4px);
   box-shadow: var(--shadow);
 }
 
 .card-body {
-  padding: 22px;
+  padding: 23px;
 }
 
 .card h3,
 .service h3 {
   color: var(--navy);
-  margin: 0 0 9px;
+  margin: 0 0 12px;
+  font-size: 19px;
 }
 
 .card p,
@@ -456,19 +478,14 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   color: var(--muted);
   margin: 0 0 12px;
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .card-image {
-  display: block;
   width: 100%;
-  height: 190px;
-  padding: 0;
-  margin: 0;
-  border: 0;
+  height: 210px;
   object-fit: cover;
   object-position: center;
-  background: transparent;
 }
 
 .text-link {
@@ -481,12 +498,12 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   text-decoration: underline;
 }
 
-/* 12. ABOUT PAGE */
+/* 13. ABOUT PAGE */
 .split {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  gap: 38px;
+  gap: 45px;
 }
 
 .split > * {
@@ -495,19 +512,19 @@ body > header:not(.site-header) nav a.nav-cta:hover {
 
 .split h2 {
   color: var(--navy);
-  font-size: clamp(26px, 3vw, 36px);
+  font-size: clamp(27px, 3vw, 38px);
   line-height: 1.3;
-  margin: 10px 0 18px;
+  margin: 12px 0 20px;
 }
 
 .split p {
   color: var(--muted);
-  line-height: 1.85;
+  line-height: 1.9;
 }
 
 .feature-img {
   width: 100%;
-  max-height: 440px;
+  max-height: 460px;
   object-fit: cover;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -517,14 +534,15 @@ body > header:not(.site-header) nav a.nav-cta:hover {
 .feature-list {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 22px 0;
 }
 
 .checks li,
 .feature-list li {
   position: relative;
-  padding-left: 26px;
-  margin: 12px 0;
+  padding-left: 28px;
+  margin: 13px 0;
+  color: var(--ink);
 }
 
 .checks li::before,
@@ -536,26 +554,27 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   font-weight: 900;
 }
 
-/* 13. SERVICES */
+/* 14. SERVICES */
 .services {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  gap: 24px;
 }
 
 .service {
-  padding: 25px;
+  padding: 30px;
+  border-top: 3px solid var(--gold);
 }
 
 .service p {
   margin-bottom: 0;
 }
 
-/* 14. STATISTICS STRIP */
+/* 15. STATISTICS */
 .stat-strip {
   background: var(--navy2);
   color: var(--white);
-  padding: 25px 4%;
+  padding: 30px 4%;
 }
 
 .stat-grid {
@@ -568,7 +587,7 @@ body > header:not(.site-header) nav a.nav-cta:hover {
 .stat-grid strong {
   display: block;
   color: var(--gold-light);
-  font-size: 20px;
+  font-size: 23px;
 }
 
 .stat-grid span {
@@ -576,44 +595,54 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   color: #dbe4ef;
 }
 
-/* 15. CALL TO ACTION */
+/* 16. CALL TO ACTION */
 .cta {
-  margin: 45px 4%;
-  padding: 38px;
-  background: var(--navy);
+  margin: 55px 4%;
+  padding: 45px;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(212, 160, 23, 0.13),
+      transparent 40%
+    ),
+    var(--navy);
+
   color: var(--white);
   border-radius: 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 25px;
 }
 
 .cta h2 {
-  margin: 0 0 8px;
+  margin: 10px 0;
+  font-size: clamp(24px, 3vw, 34px);
   line-height: 1.35;
 }
 
 .cta p {
+  max-width: 680px;
   margin: 0;
   color: #d5dfeb;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
-/* 16. CONTACT FORM */
+/* 17. CONTACT FORM */
 .form-card {
   min-width: 0;
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 26px;
+  padding: 28px;
   box-shadow: var(--shadow);
 }
 
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 17px;
+  gap: 18px;
 }
 
 .field {
@@ -640,27 +669,28 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   min-width: 0;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
-  padding: 12px;
+  padding: 13px;
   background: var(--white);
   color: var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .field textarea {
-  min-height: 125px;
+  min-height: 130px;
   resize: vertical;
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  outline: 2px solid #e6c45d;
-  outline-offset: 1px;
+  outline: none;
   border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.13);
 }
 
-/* 17. CONTACT INFORMATION */
+/* 18. CONTACT INFORMATION */
 .contact-item {
-  padding: 18px 0;
+  padding: 20px 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -674,22 +704,22 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   overflow-wrap: anywhere;
 }
 
-/* 18. COMPANY LEADERSHIP */
+/* 19. LEADERSHIP */
 .leadership-section {
   background: var(--soft);
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
 
 .leadership-section .section-title {
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 42px;
 }
 
 .leadership-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
+  align-items: stretch;
   gap: 30px;
   max-width: 1100px;
   margin: 0 auto;
@@ -699,29 +729,27 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   min-width: 0;
   background: var(--white);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(7, 26, 51, 0.08);
+  box-shadow: 0 8px 24px rgba(7, 26, 51, 0.07);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .leader-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(7, 26, 51, 0.12);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 
-/* DIRECTOR AND CEO PHOTO BORDER FIX */
 .leader-photo {
   width: 100%;
-  height: 420px;
+  height: 410px;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #ffffff;
-  border: none;
+  background: #f8fafc;
 }
 
 .leader-photo img {
@@ -737,12 +765,12 @@ body > header:not(.site-header) nav a.nav-cta:hover {
 }
 
 .leader-info {
-  padding: 26px;
+  padding: 27px;
 }
 
 .leader-label {
   display: inline-block;
-  padding: 7px 11px;
+  padding: 7px 12px;
   border-radius: 5px;
   background: #fff4d1;
   color: #806000;
@@ -754,9 +782,9 @@ body > header:not(.site-header) nav a.nav-cta:hover {
 
 .leader-info h3 {
   color: var(--navy);
-  font-size: 23px;
+  font-size: 24px;
   line-height: 1.4;
-  margin: 16px 0 6px;
+  margin: 16px 0 5px;
   overflow-wrap: anywhere;
 }
 
@@ -770,7 +798,7 @@ body > header:not(.site-header) nav a.nav-cta:hover {
 .leader-info p:not(.leader-role) {
   color: #526174;
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.85;
   margin: 0 0 16px;
 }
 
@@ -779,14 +807,14 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   align-items: center;
   justify-content: center;
   margin-top: 5px;
-  padding: 12px 17px;
+  padding: 12px 18px;
   background: var(--navy);
   color: var(--white);
   border: 1px solid var(--navy);
   border-radius: 6px;
   font-size: 14px;
-  font-weight: 600;
-  transition: background 0.2s ease, color 0.2s ease;
+  font-weight: 700;
+  transition: 0.2s ease;
 }
 
 .leader-link:hover {
@@ -795,17 +823,17 @@ body > header:not(.site-header) nav a.nav-cta:hover {
   border-color: var(--gold);
 }
 
-/* 19. FOOTER */
+/* 20. FOOTER */
 .site-footer,
 body > footer {
   background: #041326;
   color: var(--white);
-  padding: 45px 4% 20px;
+  padding: 48px 4% 25px;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1.3fr;
   gap: 35px;
 }
 
@@ -821,20 +849,8 @@ body > footer a {
 .site-footer h3,
 body > footer h3 {
   color: var(--gold-light);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
-}
-
-.footer-links {
-  display: grid;
-  align-content: start;
-  gap: 10px;
-}
-
-.footer-links a:hover,
-.site-footer a:hover,
-body > footer a:hover {
-  color: var(--gold-light);
 }
 
 body > footer {
@@ -858,6 +874,23 @@ body > footer p {
   margin-bottom: 5px;
 }
 
+body > footer strong {
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+
+.footer-links {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.footer-links a:hover,
+.site-footer a:hover,
+body > footer a:hover {
+  color: var(--gold-light);
+}
+
 .footer-bottom {
   border-top: 1px solid #26364b;
   margin-top: 30px;
@@ -871,14 +904,14 @@ body > footer p {
   color: #aebdce;
   text-align: center;
   font-size: 12px;
-  padding: 15px 4%;
+  padding: 16px 4%;
 }
 
-/* 20. WHATSAPP BUTTON */
+/* 21. WHATSAPP */
 .whatsapp-float,
 .whatsapp {
   position: fixed;
-  right: 18px;
+  right: 20px;
   bottom: 20px;
   z-index: 90;
   display: inline-flex;
@@ -886,53 +919,56 @@ body > footer p {
   justify-content: center;
   background: #168b52;
   color: var(--white);
-  padding: 12px 17px;
+  padding: 13px 19px;
   border-radius: 30px;
   font-size: 14px;
   font-weight: 800;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  transition: background 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .whatsapp-float:hover,
 .whatsapp:hover {
   background: #116d40;
   color: var(--white);
+  transform: translateY(-2px);
 }
 
-/* 21. INFORMATION NOTE */
+/* 22. INFORMATION NOTE */
 .note {
   background: #fff8df;
   border-left: 4px solid var(--gold);
-  padding: 14px 16px;
+  padding: 15px 17px;
   font-size: 13px;
   color: #5d4a14;
   border-radius: 4px;
 }
 
-/* 22. TABLET NAVIGATION */
+/* 23. TABLET */
 @media (max-width: 1000px) {
-  .nav {
-    gap: 14px;
-  }
-
   .brand img {
     width: 52px;
     height: 52px;
   }
 
   .nav-links {
-    gap: 6px;
+    gap: 5px;
   }
 
-  .nav-links a {
+  .nav-links a,
+  body > header:not(.site-header) nav a {
     padding: 10px 9px;
     font-size: 12px;
   }
+
+  .hero {
+    padding: 85px 4%;
+  }
 }
 
-/* 23. MOBILE NAVIGATION */
+/* 24. MOBILE NAVIGATION */
 @media (max-width: 900px) {
+
   .menu-toggle {
     display: inline-flex;
   }
@@ -983,20 +1019,16 @@ body > footer p {
   }
 
   .split {
-    gap: 25px;
-  }
-
-  .hero {
-    padding: 76px 0;
+    gap: 28px;
   }
 }
 
-/* 24. SMALL MOBILE SCREENS */
+/* 25. SMALL MOBILE */
 @media (max-width: 600px) {
-  .topbar .container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3px;
+
+  .topbar {
+    font-size: 10px;
+    line-height: 1.8;
   }
 
   .brand {
@@ -1020,7 +1052,7 @@ body > footer p {
   }
 
   .hero {
-    padding: 60px 0;
+    padding: 65px 4%;
   }
 
   .hero h1 {
@@ -1032,7 +1064,15 @@ body > footer p {
   }
 
   .section {
-    padding: 45px 4%;
+    padding: 48px 4%;
+  }
+
+  .page-hero {
+    padding: 60px 5%;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(32px, 9vw, 43px);
   }
 
   .grid-2,
@@ -1053,22 +1093,22 @@ body > footer p {
 
   .stat-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
   }
 
   .cta {
     margin: 30px 4%;
-    padding: 25px;
+    padding: 27px;
     flex-direction: column;
     align-items: flex-start;
   }
 
   .form-card {
-    padding: 18px;
+    padding: 19px;
   }
 
   .card-image {
-    height: 190px;
+    height: 200px;
   }
 
   .feature-img {
@@ -1088,25 +1128,26 @@ body > footer p {
   }
 
   .leadership-section {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  body > footer {
+    gap: 28px;
   }
 
   .whatsapp-float,
   .whatsapp {
     right: 12px;
     bottom: 14px;
-    padding: 11px 14px;
+    padding: 11px 15px;
     font-size: 13px;
-  }
-
-  body > footer {
-    gap: 28px;
   }
 }
 
-/* 25. VERY SMALL PHONES */
+/* 26. VERY SMALL PHONES */
 @media (max-width: 380px) {
+
   .brand img {
     width: 40px;
     height: 40px;
@@ -1128,7 +1169,6 @@ body > footer p {
 
   .leader-photo {
     height: 320px;
-    padding: 0;
   }
 
   .leader-info {
@@ -1136,8 +1176,19 @@ body > footer p {
   }
 }
 
-/* 26. ACCESSIBILITY */
+/* 27. KEYBOARD ACCESSIBILITY */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* 28. REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
@@ -1149,4 +1200,3 @@ body > footer p {
     animation-duration: 0.01ms !important;
   }
 }
-
