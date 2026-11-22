@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Contact & Trade Inquiry | A. Awan Port City Traders (Pvt) Ltd</title>
-  <meta name="description" content="Contact A. Awan Port City Traders for Pakistani product sourcing, export inquiries and trade quotations.">
+  <meta name="description" content="Contact A. Awan Port City Traders for Pakistani export sourcing, fresh produce, rice, textiles, pink salt and international trade inquiries.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.awanportcitytraders.com/contact.html">
+
+  <meta property="og:title" content="Contact Our Trade Team | A. Awan Port City Traders">
+  <meta property="og:description" content="Send your international product sourcing and export inquiry to our Karachi-based trade team.">
+  <meta property="og:url" content="https://www.awanportcitytraders.com/contact.html">
+  <meta property="og:type" content="website">
 
   <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
@@ -25,21 +32,27 @@
   </div>
 
   <header class="site-header">
-    <nav class="container nav">
+    <nav class="container nav" aria-label="Main navigation">
 
       <a class="brand" href="index.html">
-        <img src="logo.png" alt="Company logo">
+        <img src="logo.png" alt="A. Awan Port City Traders logo">
         <span class="brand-text">
           A. AWAN PORT CITY TRADERS
           <small>CONNECTING MARKETS, CREATING OPPORTUNITIES</small>
         </span>
       </a>
 
-      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="main-menu"
+      >
         ☰ Menu
       </button>
 
-      <div class="nav-links">
+      <div class="nav-links" id="main-menu">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="products.html">Products & Services</a>
@@ -54,10 +67,11 @@
 
     <section class="page-hero">
       <div class="container">
-        <span class="eyebrow">Get in Touch</span>
+        <span class="eyebrow">International Trade Inquiries</span>
         <h1>Contact Our Trade Team</h1>
         <p>
-          Tell us what you need, where you need it and the quantity you are considering.
+          Tell us what product you need, your destination country and the
+          quantity you are considering. We welcome inquiries from international buyers.
         </p>
       </div>
     </section>
@@ -69,8 +83,9 @@
           <div class="section-heading">
             <h2>Let's Discuss Your Requirements</h2>
             <p>
-              For a faster response, include the product, quantity, destination,
-              packaging and any required specifications.
+              Share your product requirements, quantity, destination,
+              packaging preferences and specifications so we can understand
+              your inquiry.
             </p>
           </div>
 
@@ -106,6 +121,12 @@
             <strong>Head Office</strong>
             <span>Karachi, Pakistan</span>
           </div>
+
+          <div class="note">
+            <strong>For a faster quotation:</strong>
+            Please include your destination port, required quantity,
+            packaging details and any product specifications.
+          </div>
         </div>
 
         <div class="form-card" id="inquiry">
@@ -113,8 +134,8 @@
           <h2 style="margin-top:0">Send a Trade Inquiry</h2>
 
           <p style="color:#64748b;font-size:14px">
-            Complete the details below. Your inquiry will be submitted directly
-            through our online form.
+            Complete the form below. Our team will receive your inquiry
+            through our online form service.
           </p>
 
           <form
@@ -133,8 +154,8 @@
                   type="text"
                   required
                   maxlength="150"
-                  autocomplete="organization"
-                  placeholder="Your name or company"
+                  autocomplete="name"
+                  placeholder="Your full name or company name"
                 >
               </div>
 
@@ -167,17 +188,18 @@
                 <label for="product">Product *</label>
                 <select id="product" name="product" required>
                   <option value="">Choose a product</option>
-                  <option>Green Chillies</option>
-                  <option>Rice</option>
-                  <option>Mangoes / Fresh Produce</option>
-                  <option>Textiles / Garments</option>
-                  <option>Pink Salt</option>
-                  <option>Kinnow Oranges</option>
-                  <option>Peanuts</option>
-                  <option>Red Onions</option>
-                  <option>Fresh Apples</option>
-                  <option>Other Agricultural Products</option>
-                  <option>Other Product / Service</option>
+                  <option value="Green Chillies">Green Chillies</option>
+                  <option value="Rice">Rice</option>
+                  <option value="Mangoes">Mangoes</option>
+                  <option value="Kinnow Oranges">Kinnow Oranges</option>
+                  <option value="Textiles / Garments">Textiles / Garments</option>
+                  <option value="Pink Salt">Pink Salt</option>
+                  <option value="Salt Bricks">Salt Bricks</option>
+                  <option value="Peanuts">Peanuts</option>
+                  <option value="Red Onions">Red Onions</option>
+                  <option value="Fresh Apples">Fresh Apples</option>
+                  <option value="Other Agricultural Products">Other Agricultural Products</option>
+                  <option value="Other Product / Service">Other Product / Service</option>
                 </select>
               </div>
 
@@ -206,13 +228,25 @@
               </div>
 
               <div class="field field-full">
+                <label for="packaging">Packaging Requirements</label>
+                <input
+                  id="packaging"
+                  name="packaging"
+                  type="text"
+                  maxlength="300"
+                  placeholder="e.g. 5 kg cartons, bulk bags, private label"
+                >
+              </div>
+
+              <div class="field field-full">
                 <label for="details">Inquiry Details *</label>
                 <textarea
                   id="details"
                   name="details"
                   required
                   maxlength="5000"
-                  placeholder="Specifications, packaging, target price or other requirements"
+                  rows="5"
+                  placeholder="Please describe your specifications, quality requirements, preferred delivery terms or other details."
                 ></textarea>
               </div>
 
@@ -222,7 +256,7 @@
                 value="New Trade Inquiry - A. Awan Port City Traders"
               >
 
-              <!-- Hidden spam-trap field -->
+              <!-- Spam protection field: leave empty -->
               <div
                 aria-hidden="true"
                 style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden"
@@ -243,7 +277,7 @@
                   id="submitInquiry"
                   type="submit"
                 >
-                  Submit Inquiry
+                  Submit Trade Inquiry
                 </button>
               </div>
 
@@ -260,8 +294,8 @@
           </form>
 
           <p style="color:#64748b;font-size:12px;margin-top:18px">
-            Please provide accurate contact information. Your inquiry will be
-            submitted through our online form.
+            Please provide accurate contact information and business
+            requirements. Your details will be used to respond to your inquiry.
           </p>
 
         </div>
@@ -278,11 +312,12 @@
         <div>
           <img
             src="logo.png"
-            alt="Company logo"
+            alt="A. Awan Port City Traders logo"
             style="width:75px;height:75px;object-fit:contain;background:white;border-radius:8px;padding:4px"
           >
           <p>
-            Connecting markets and creating opportunities through professional trading.
+            Connecting markets and creating opportunities through
+            professional export sourcing and trade coordination.
           </p>
         </div>
 
@@ -304,10 +339,14 @@
             </a>
           </p>
           <p>
-            <a href="https://wa.me/923112040915">Pakistan WhatsApp</a>
+            <a href="https://wa.me/923112040915" target="_blank" rel="noopener">
+              Pakistan WhatsApp
+            </a>
           </p>
           <p>
-            <a href="https://wa.me/971526553541">UAE WhatsApp</a>
+            <a href="https://wa.me/971526553541" target="_blank" rel="noopener">
+              UAE WhatsApp
+            </a>
           </p>
         </div>
 
@@ -320,12 +359,12 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp button remains available -->
   <a
     class="whatsapp-float"
     href="https://wa.me/971526553541"
     target="_blank"
     rel="noopener"
+    aria-label="Contact us on WhatsApp"
   >
     WhatsApp ↗
   </a>
@@ -333,6 +372,23 @@
   <script src="script.js"></script>
 
   <script>
+    // Automatically select the product passed from products.html
+    const productSelect = document.getElementById("product");
+    const urlParams = new URLSearchParams(window.location.search);
+    const requestedProduct = urlParams.get("product");
+
+    if (requestedProduct && productSelect) {
+      const matchingOption = Array.from(productSelect.options).find(
+        option =>
+          option.value.toLowerCase() === requestedProduct.trim().toLowerCase()
+      );
+
+      if (matchingOption) {
+        productSelect.value = matchingOption.value;
+      }
+    }
+
+    // Submit the inquiry through the existing Formspree endpoint
     const tradeForm = document.getElementById("tradeForm");
     const formMessage = document.getElementById("formMessage");
     const submitButton = document.getElementById("submitInquiry");
@@ -376,7 +432,7 @@
 
         formMessage.style.color = "#168b52";
         formMessage.textContent =
-          "Thank you for contacting A. Awan Port City Traders (Pvt) Ltd! Your inquiry has been submitted successfully. Our trade team will review your requirements.";
+          "Thank you for contacting A. Awan Port City Traders (Pvt) Ltd. Your inquiry has been submitted successfully. Our trade team will review your requirements.";
 
         formMessage.scrollIntoView({
           behavior: "smooth",
