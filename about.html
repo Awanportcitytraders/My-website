@@ -1,38 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta
-    name="description"
-    content="About A. Awan Port City Traders (Pvt) Ltd — Pakistan-based export sourcing, product coordination and general trading."
-  >
+  <meta name="theme-color" content="#101d35">
+  <meta name="description" content="Discover A. Awan Port City Traders (Pvt) Ltd, a Pakistan-based export sourcing and trade coordination company connecting Pakistani products with international buyers.">
 
-  <title>About Us | A. Awan Port City Traders</title>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.awanportcitytraders.com/about.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Us | A. Awan Port City Traders">
+  <meta property="og:description" content="Connecting Pakistani products with international markets through export sourcing, supplier coordination and professional trade services.">
+  <meta property="og:url" content="https://www.awanportcitytraders.com/about.html">
+  <meta property="og:image" content="https://www.awanportcitytraders.com/logo.png">
+
+  <title>About Us | A. Awan Port City Traders (Pvt) Ltd</title>
 
   <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "A. Awan Port City Traders (Pvt) Ltd",
+    "url": "https://www.awanportcitytraders.com/",
+    "logo": "https://www.awanportcitytraders.com/logo.png",
+    "email": "trade@awanportcitytraders.com",
+    "telephone": "+971526553541",
+    "description": "Pakistan-based export sourcing and international trade coordination company."
+  }
+  </script>
 </head>
 
 <body>
 
-  <!-- Top Bar -->
+  <!-- TOP BAR -->
   <div class="topbar">
     Karachi, Pakistan
+    <span aria-hidden="true"> | </span>
+    International Trade
     <span aria-hidden="true"> | </span>
     Connecting Markets, Creating Opportunities
   </div>
 
-  <!-- Header and Navigation -->
+  <!-- HEADER -->
   <header>
     <a class="brand" href="index.html">
       <img src="logo.png" alt="A. Awan Port City Traders logo">
 
       <span>
         A. AWAN PORT CITY TRADERS
-        <small>IMPORT · EXPORT · GENERAL TRADING</small>
+        <small>EXPORT SOURCING · TRADE COORDINATION</small>
       </span>
     </a>
 
@@ -41,8 +62,9 @@
       type="button"
       aria-label="Toggle navigation menu"
       aria-expanded="false"
+      aria-controls="main-navigation"
       onclick="
-        const nav = document.querySelector('header nav');
+        const nav = document.getElementById('main-navigation');
         const isOpen = nav.classList.toggle('open');
         this.setAttribute('aria-expanded', isOpen);
       "
@@ -50,7 +72,7 @@
       ☰
     </button>
 
-    <nav aria-label="Main navigation">
+    <nav id="main-navigation" aria-label="Main navigation">
       <a href="index.html">Home</a>
 
       <a class="active" href="about.html" aria-current="page">
@@ -67,173 +89,325 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
   <main>
-<!-- Company Leadership Section -->
-<section class="section leadership-section" id="leadership">
 
-  <div class="section-title">
-    <span class="eyebrow dark">Our Leadership</span>
-
-    <h2>Meet Our Directors</h2>
-
-    <p>
-      Dedicated leadership, professional coordination and a shared
-      commitment to building international business relationships.
-    </p>
-  </div>
-
-  <div class="leadership-grid">
-
-    <!-- Director: Adeel Awan -->
-    <article class="leader-card">
-
-      <div class="leader-photo">
-        <img
-          src="/images/adeel-ahmed.jpg"
-          alt="Adeel Awan, Director of A. Awan Port City Traders (Pvt) Ltd"
-          loading="lazy"
-        >
-      </div>
-
-      <div class="leader-info">
-
-        <span class="leader-label">Company Leadership</span>
-
-        <h3>Adeel Awan</h3>
-
-        <p class="leader-role">Director</p>
-
-        <p>
-          As Director of A. Awan Port City Traders (Pvt) Ltd,
-          Adeel Awan focuses on business development, international
-          trade opportunities and building professional relationships
-          with buyers, suppliers and business partners.
-        </p>
-
-        <p>
-          His vision is to connect Pakistani products with international
-          markets through clear communication, dependable coordination
-          and a professional approach to trade.
-        </p>
-
-        <a class="leader-link" href="contact.html#inquiry">
-          Contact Our Team ↗
-        </a>
-
-      </div>
-    </article>
-
-    <!-- CEO & Director: Hafiz Sjeel Awan -->
-    <article class="leader-card">
-
-      <div class="leader-photo">
-        <img
-          src="/images/hafiz-sjeel-ahmed.jpg"
-          alt="Hafiz Sjeel Awan, CEO and Director of A. Awan Port City Traders (Pvt) Ltd"
-          loading="lazy"
-        >
-      </div>
-
-      <div class="leader-info">
-
-        <span class="leader-label">Executive Leadership</span>
-
-        <h3>Hafiz Sjeel Awan</h3>
-
-        <p class="leader-role">CEO &amp; Director</p>
-
-        <p>
-          As CEO and Director, Hafiz Sjeel Awan focuses on company
-          operations, supplier coordination, business communications
-          and the day-to-day activities of A. Awan Port City Traders
-          (Pvt) Ltd.
-        </p>
-
-        <p>
-          His role supports the development of business opportunities,
-          coordination of customer requirements and professional
-          communication with trading partners.
-        </p>
-
-        <a class="leader-link" href="contact.html#inquiry">
-          Contact Our Team ↗
-        </a>
-
-      </div>
-    </article>
-
-  </div>
-
-</section>
-
-
-
-    <!-- About Hero -->
+    <!-- ABOUT HERO -->
     <section class="page-hero">
-      <span class="eyebrow">About Our Company</span>
+      <span class="eyebrow">ABOUT OUR COMPANY</span>
 
       <h1>
-        Trade with clarity.<br>
-        Build opportunities.
+        Connecting Pakistan<br>
+        With Global Markets.
       </h1>
 
       <p>
-        We welcome import, export, product sourcing and general trading
-        inquiries from businesses seeking practical trade coordination.
+        Building international trade opportunities through Pakistani
+        product sourcing, supplier coordination and professional
+        export services.
       </p>
+
+      <a class="button gold" href="contact.html#inquiry">
+        Start a Business Inquiry ↗
+      </a>
     </section>
 
-    <!-- Company Introduction -->
+    <!-- COMPANY INTRODUCTION -->
     <section class="section">
       <div class="split">
 
         <div>
-          <span class="eyebrow dark">Who We Are</span>
+          <span class="eyebrow dark">WHO WE ARE</span>
 
-          <h2>Connecting businesses across markets.</h2>
+          <h2>Your Connection to Pakistani Products.</h2>
 
           <p>
             A. Awan Port City Traders (Pvt) Ltd is a Pakistan-based
-            trading company focused on exploring business opportunities
-            across different product categories and international markets.
+            export sourcing and trade coordination company focused
+            on connecting international buyers with product
+            sourcing opportunities in Pakistan.
           </p>
 
           <p>
-            We aim to understand buyers' and suppliers' requirements
-            before discussing suitable product options, quotations,
-            packaging, documentation and delivery terms.
+            We work to understand buyer requirements and coordinate
+            with relevant suppliers to discuss product specifications,
+            quantities, packaging, quotations and shipment arrangements.
+          </p>
+
+          <p>
+            Our approach is based on clear communication, practical
+            coordination and understanding the requirements of
+            international trade partners.
           </p>
 
           <ul class="checks">
-            <li>Professional inquiry handling</li>
-            <li>Flexible multi-category trading scope</li>
-            <li>Attention to specifications and quantities</li>
-            <li>Clear communication before commitments</li>
+            <li>Pakistan-based product sourcing</li>
+            <li>Fresh produce and agricultural products</li>
+            <li>Rice, textiles and other trading categories</li>
+            <li>International buyer and supplier coordination</li>
+            <li>Quotation and shipment requirement discussions</li>
           </ul>
         </div>
 
         <img
           class="feature-img"
-          src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"
-          alt="Business partners discussing a business opportunity"
+          src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1100&q=85"
+          alt="Business professionals discussing an international trade opportunity"
           loading="lazy"
+          decoding="async"
         >
 
       </div>
     </section>
 
-    <!-- Company Principles -->
+    <!-- OUR BUSINESS APPROACH -->
     <section class="section soft">
+
       <div class="section-title">
+        <span class="eyebrow dark">OUR BUSINESS APPROACH</span>
 
-        <span class="eyebrow dark">Our Principles</span>
-
-        <h2>How We Aim to Do Business</h2>
+        <h2>Making International Trade More Accessible.</h2>
 
         <p>
-          Good trading relationships begin with accurate information,
-          clear communication and realistic expectations.
+          We focus on understanding business requirements and
+          coordinating suitable sourcing opportunities between
+          Pakistani suppliers and international buyers.
+        </p>
+      </div>
+
+      <div class="services">
+
+        <article class="service">
+          <h3>Product Sourcing</h3>
+          <p>
+            Exploring Pakistani product sourcing opportunities
+            according to buyer specifications, requirements
+            and market needs.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Supplier Coordination</h3>
+          <p>
+            Coordinating with relevant suppliers to discuss
+            product availability, quality specifications,
+            packaging and quantities.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Export Coordination</h3>
+          <p>
+            Discussing export documentation, logistics,
+            shipment requirements and commercial arrangements
+            with relevant business partners.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- MISSION AND VISION -->
+    <section class="section">
+
+      <div class="section-title">
+        <span class="eyebrow dark">OUR DIRECTION</span>
+        <h2>Our Mission &amp; Vision</h2>
+      </div>
+
+      <div class="services">
+
+        <article class="service">
+          <h3>Our Mission</h3>
+
+          <p>
+            To connect international buyers with Pakistani
+            sourcing opportunities through professional
+            communication, supplier coordination and
+            responsible trade practices.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Our Vision</h3>
+
+          <p>
+            To build lasting international business relationships
+            and contribute to connecting Pakistani products
+            with markets around the world.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- COMPANY PRINCIPLES -->
+    <section class="section soft">
+
+      <div class="section-title">
+        <span class="eyebrow dark">OUR VALUES</span>
+
+        <h2>Principles Behind Our Business.</h2>
+
+        <p>
+          We believe that strong trading relationships begin
+          with honesty, clear communication and professional
+          coordination.
+        </p>
+      </div>
+
+      <div class="services">
+
+        <article class="service">
+          <h3>Integrity</h3>
+
+          <p>
+            Communicating product information, quotations
+            and commercial conditions as clearly as possible.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Professionalism</h3>
+
+          <p>
+            Handling buyer and supplier inquiries with
+            attention to requirements and business expectations.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Reliability</h3>
+
+          <p>
+            Focusing on practical coordination and clear
+            communication throughout business discussions.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section class="section leadership-section" id="leadership">
+
+      <div class="section-title">
+
+        <span class="eyebrow dark">OUR LEADERSHIP</span>
+
+        <h2>Meet Our Directors.</h2>
+
+        <p>
+          Leadership focused on business development,
+          operational coordination and international
+          trade opportunities.
+        </p>
+
+      </div>
+
+      <div class="leadership-grid">
+
+        <!-- DIRECTOR -->
+        <article class="leader-card">
+
+          <div class="leader-photo">
+            <img
+              src="/images/adeel-ahmed.jpg"
+              alt="Adeel Awan, Director"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+
+          <div class="leader-info">
+
+            <span class="leader-label">COMPANY LEADERSHIP</span>
+
+            <h3>Adeel Awan</h3>
+
+            <p class="leader-role">Director</p>
+
+            <p>
+              Adeel Awan focuses on business development,
+              international trade opportunities and building
+              professional relationships with buyers, suppliers
+              and business partners.
+            </p>
+
+            <p>
+              His vision is to connect Pakistani products
+              with international markets through sourcing
+              opportunities, clear communication and
+              professional trade coordination.
+            </p>
+
+            <a class="leader-link" href="contact.html#inquiry">
+              Contact Our Team ↗
+            </a>
+
+          </div>
+
+        </article>
+
+        <!-- CEO AND DIRECTOR -->
+        <article class="leader-card">
+
+          <div class="leader-photo">
+            <img
+              src="/images/hafiz-sjeel-ahmed.jpg"
+              alt="Hafiz Sjeel Awan, CEO and Director"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+
+          <div class="leader-info">
+
+            <span class="leader-label">EXECUTIVE LEADERSHIP</span>
+
+            <h3>Hafiz Sjeel Awan</h3>
+
+            <p class="leader-role">CEO &amp; Director</p>
+
+            <p>
+              Hafiz Sjeel Awan focuses on company operations,
+              supplier coordination, business communications
+              and the day-to-day activities of the company.
+            </p>
+
+            <p>
+              His role supports the coordination of customer
+              requirements, business opportunities and
+              professional communication with trading partners.
+            </p>
+
+            <a class="leader-link" href="contact.html#inquiry">
+              Contact Our Team ↗
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- PRODUCTS AND MARKETS -->
+    <section class="section">
+
+      <div class="section-title">
+
+        <span class="eyebrow dark">OUR PRODUCT CATEGORIES</span>
+
+        <h2>Exploring Pakistani Products for Global Buyers.</h2>
+
+        <p>
+          We welcome inquiries from importers, wholesalers,
+          distributors and businesses interested in sourcing
+          products from Pakistan.
         </p>
 
       </div>
@@ -241,59 +415,80 @@
       <div class="services">
 
         <article class="service">
-          <h3>Integrity</h3>
+          <h3>Fresh Produce</h3>
           <p>
-            We aim to communicate product information and commercial
-            conditions clearly.
+            Green chillies, mangoes, kinnow, onions, apples
+            and other agricultural products.
           </p>
         </article>
 
         <article class="service">
-          <h3>Coordination</h3>
+          <h3>Rice &amp; Food Products</h3>
           <p>
-            We help bring buyer requirements and supplier information
-            together.
+            Pakistani basmati rice and other food product
+            sourcing opportunities.
           </p>
         </article>
 
         <article class="service">
-          <h3>Opportunity</h3>
+          <h3>Salt &amp; Textiles</h3>
           <p>
-            We welcome relevant inquiries, subject to product
-            availability, feasibility and applicable compliance.
+            Himalayan pink salt products, salt bricks,
+            textiles and related product categories.
           </p>
         </article>
 
       </div>
+
+      <div class="section-title">
+        <a class="button gold" href="products.html">
+          Explore Our Products ↗
+        </a>
+      </div>
+
     </section>
 
-    <!-- Call to Action -->
+    <!-- CALL TO ACTION -->
     <section class="cta">
-      <h2>Let's Discuss a Business Opportunity.</h2>
+
+      <span class="eyebrow">LET'S WORK TOGETHER</span>
+
+      <h2>Have a Product Requirement?</h2>
 
       <p>
-        Tell us what you need, your target market and your expected quantity.
+        Share your product requirements, expected quantity
+        and destination market. Our team welcomes inquiries
+        from international buyers and business partners.
       </p>
 
       <a class="button gold" href="contact.html#inquiry">
-        Send an Inquiry ↗
+        Request a Business Quotation ↗
       </a>
+
     </section>
 
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
 
-    <!-- Company Information -->
     <div class="footer-company">
+
       <h3>A. Awan Port City Traders (Pvt) Ltd</h3>
 
-      <p>Connecting Markets, Creating Opportunities.</p>
+      <p>
+        Connecting Markets, Creating Opportunities.
+      </p>
+
+      <p>
+        Pakistan-based export sourcing and international
+        trade coordination.
+      </p>
+
     </div>
 
-    <!-- Quick Links -->
     <div class="footer-links">
+
       <strong>Explore</strong>
 
       <a href="index.html">Home</a>
@@ -303,10 +498,11 @@
       <a href="products.html">Products &amp; Services</a>
 
       <a href="contact.html">Contact</a>
+
     </div>
 
-    <!-- Contact Information -->
     <div class="footer-contact">
+
       <strong>Contact Us</strong>
 
       <a href="mailto:trade@awanportcitytraders.com">
@@ -320,29 +516,32 @@
       <a href="tel:+923112040915">
         Pakistan: +92 311 204 0915
       </a>
+
     </div>
 
   </footer>
 
-  <!-- Copyright -->
+  <!-- COPYRIGHT -->
   <div class="copyright">
+
     © <span class="year"></span>
     A. Awan Port City Traders (Pvt) Ltd.
     All rights reserved.
+
   </div>
 
-  <!-- WhatsApp Button -->
+  <!-- WHATSAPP -->
   <a
     class="whatsapp"
     href="https://wa.me/971526553541"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Contact us on WhatsApp"
+    aria-label="Contact A. Awan Port City Traders on WhatsApp"
   >
     WhatsApp Us
   </a>
 
-  <!-- JavaScript -->
+  <!-- JAVASCRIPT -->
   <script src="script.js"></script>
 
 </body>
